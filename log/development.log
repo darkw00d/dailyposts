@@ -1,0 +1,1377 @@
+  [1m[35m (91.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (13.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(751951996379702895);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateEditors (20170102152320)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (17.1ms)[0m  [1m[35mCREATE TABLE "editors" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "email" character varying(25), "username" character varying(15), "password" character varying(15), "location" character varying, "points" integer)[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170102152320"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSubjects (20170102152342)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "subjects" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "name" character varying(25), "mentions" integer)[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170102152342"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateThemes (20170102152413)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "themes" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "name" character varying(25), "mentions" integer)[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170102152413"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateHeadLines (20170102152442)
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE "head_lines" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "text" character varying(200), "score" integer)[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170102152442"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateContents (20170102152500)
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "head_lines" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "text" character varying(200), "score" integer)[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(751951996379702895)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(751951996379702895);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateContents (20170102152500)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.0ms)[0m  [1m[35mCREATE TABLE "contents" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "text" character varying(200), "score" integer)[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170102152500"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-01-02 15:49:35 UTC], ["updated_at", 2017-01-02 15:49:35 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(751951996379702895)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(751951996379702895);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateContents (20170102152500)
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.0ms)[0m  [1m[35mDROP TABLE "contents"[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20170102152500"]]
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateHeadLines (20170102152442)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE "head_lines"[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20170102152442"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateThemes (20170102152413)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE "themes"[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20170102152413"]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSubjects (20170102152342)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "subjects"[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20170102152342"]]
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEditors (20170102152320)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.0ms)[0m  [1m[35mDROP TABLE "editors"[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20170102152320"]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(751951996379702895)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(751951996379702895);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateEditors (20170102152320)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (17.5ms)[0m  [1m[35mCREATE TABLE "editors" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "email" character varying(25), "username" character varying(15), "password" character varying(15), "location" character varying, "points" integer)[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170102152320"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSubjects (20170102152342)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.0ms)[0m  [1m[35mCREATE TABLE "subjects" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "name" character varying(25), "mentions" integer)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170102152342"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateThemes (20170102152413)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.0ms)[0m  [1m[35mCREATE TABLE "themes" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "name" character varying(25), "mentions" integer)[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170102152413"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateHeadLines (20170102152442)
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE TABLE "head_lines" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "text" character varying(200), "score" integer)[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170102152442"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateContents (20170102152500)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE "contents" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "text" character varying(200), "score" integer)[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170102152500"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(751951996379702895)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for ::1 at 2017-01-02 16:02:47 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/railties-5.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/railties-5.0.1/lib/rails/templates/rails/welcome/index.html.erb (34.2ms)
+Completed 200 OK in 235ms (Views: 119.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-01-02 16:04:55 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  Rendered content/view.html.erb within layouts/application (104.7ms)
+Completed 200 OK in 2589ms (Views: 2563.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-01-02 16:09:10 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  Rendered content/view.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 138ms (Views: 111.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/content/create" for ::1 at 2017-01-02 16:09:15 +0000
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for ContentController):
+  
+actionpack (5.0.1) lib/abstract_controller/base.rb:121:in `process'
+actionview (5.0.1) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.1) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.1) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (1.0ms)
+Started GET "/" for ::1 at 2017-01-02 16:14:35 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  Rendered content/view.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 139ms (Views: 110.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/content/create" for ::1 at 2017-01-02 16:14:39 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hv1i41Au//dr6Xmzd8LEG4kbcgP3JU66y4eQJjsLnt3MHsLZsFLujqpgJcJHxTZNWVbwKFMQSLPVOHSP4YX4CA==", "head_line"=>{"text"=>"ffdfd"}, "commit"=>"Create comment"}
+Completed 400 Bad Request in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: headline):
+  
+app/controllers/content_controller.rb:19:in `head_params'
+app/controllers/content_controller.rb:9:in `create'
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.5ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (1802.5ms)
+Started POST "/content/create" for ::1 at 2017-01-02 16:15:33 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hv1i41Au//dr6Xmzd8LEG4kbcgP3JU66y4eQJjsLnt3MHsLZsFLujqpgJcJHxTZNWVbwKFMQSLPVOHSP4YX4CA==", "head_line"=>{"text"=>"ffdfd"}, "commit"=>"Create comment"}
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: headline):
+  
+app/controllers/content_controller.rb:19:in `head_params'
+app/controllers/content_controller.rb:9:in `create'
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.0ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (1659.8ms)
+Started POST "/content/create" for ::1 at 2017-01-02 16:15:39 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hv1i41Au//dr6Xmzd8LEG4kbcgP3JU66y4eQJjsLnt3MHsLZsFLujqpgJcJHxTZNWVbwKFMQSLPVOHSP4YX4CA==", "head_line"=>{"text"=>"ffdfd"}, "commit"=>"Create comment"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: headline):
+  
+app/controllers/content_controller.rb:19:in `head_params'
+app/controllers/content_controller.rb:9:in `create'
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.0ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (1677.7ms)
+Started POST "/content/create" for ::1 at 2017-01-02 16:16:17 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hv1i41Au//dr6Xmzd8LEG4kbcgP3JU66y4eQJjsLnt3MHsLZsFLujqpgJcJHxTZNWVbwKFMQSLPVOHSP4YX4CA==", "head_line"=>{"text"=>"ffdfd"}, "commit"=>"Create comment"}
+Completed 400 Bad Request in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: headline):
+  
+app/controllers/content_controller.rb:19:in `head_params'
+app/controllers/content_controller.rb:9:in `create'
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.0ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (1652.0ms)
+Started POST "/content/create" for ::1 at 2017-01-02 16:18:05 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hv1i41Au//dr6Xmzd8LEG4kbcgP3JU66y4eQJjsLnt3MHsLZsFLujqpgJcJHxTZNWVbwKFMQSLPVOHSP4YX4CA==", "head_line"=>{"text"=>"ffdfd"}, "commit"=>"Create comment"}
+Completed 400 Bad Request in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: headlines):
+  
+app/controllers/content_controller.rb:19:in `head_params'
+app/controllers/content_controller.rb:9:in `create'
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (11.5ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (1630.9ms)
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Started POST "/content/create" for ::1 at 2017-01-02 16:21:44 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hv1i41Au//dr6Xmzd8LEG4kbcgP3JU66y4eQJjsLnt3MHsLZsFLujqpgJcJHxTZNWVbwKFMQSLPVOHSP4YX4CA==", "head_line"=>{"text"=>"ffdfd"}, "commit"=>"Create comment"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-02 16:21:45 UTC], ["updated_at", 2017-01-02 16:21:45 UTC], ["text", "ffdfd"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 33ms (ActiveRecord: 11.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-02 16:21:45 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  Rendered content/view.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 136ms (Views: 110.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-02 16:28:05 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 152ms (Views: 120.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/content/create" for ::1 at 2017-01-02 16:28:11 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mf/OApV2ao2/W1tu8+Pc9hmQ/JQ+WwKs3QjqrE6IprbTHG44dQp79H7SBx/D5C6gyd1+v5puBKXDtw4FlAbAYw==", "head_line"=>{"text"=>"slfsdf"}, "commit"=>"Create comment"}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-02 16:28:11 UTC], ["updated_at", 2017-01-02 16:28:11 UTC], ["text", "slfsdf"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 12ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-02 16:28:11 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (2.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 138ms (Views: 112.4ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/content/create" for ::1 at 2017-01-02 16:28:23 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Begpf4NenR86Gl3wnvitXd7BsGKQxVGeknMsbKaYZS1PC4lFYyKMZvuTAYGu/18LDowySTTwV5eMzMjFfBYD+A==", "head_line"=>{"text"=>"@rerer"}, "commit"=>"Create comment"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-02 16:28:23 UTC], ["updated_at", 2017-01-02 16:28:23 UTC], ["text", "@rerer"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 13ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-02 16:28:23 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.5ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 141ms (Views: 116.0ms | ActiveRecord: 1.5ms)
+
+
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  [1m[36mContent Load (1.0ms)[0m  [1m[34mSELECT  "contents".* FROM "contents" WHERE "contents"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Started POST "/content/create" for ::1 at 2017-01-02 16:47:56 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dgN4q3pkro3Wbx+Gz+zQ5zDHWZ1wXWQeaUwIwD4Lj6884NiRmhi/9BfmQ/f/6yKx4IrbttRoYhd38+xp5IXpeg==", "head_line"=>{"text"=>""}, "commit"=>"Create comment"}
+  [1m[35m (2.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-02 16:47:56 UTC], ["updated_at", 2017-01-02 16:47:56 UTC], ["text", ""]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 24ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-02 16:47:56 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.4ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 172ms (Views: 142.7ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/content/create" for ::1 at 2017-01-02 16:48:00 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yUnsfTubh0owJz/FPEVaMGdQM+pw/m8kzG9xy9fEju+DqkxH2+eWM/GuY7QMQqhmtx2xwdTLaS3S0JViDUroOg==", "head_line"=>{"text"=>"lll"}, "commit"=>"Create comment"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-02 16:48:00 UTC], ["updated_at", 2017-01-02 16:48:00 UTC], ["text", "lll"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 7ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-02 16:48:00 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (2.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 160ms (Views: 132.5ms | ActiveRecord: 2.0ms)
+
+
+  [1m[36mContent Load (1.0ms)[0m  [1m[34mSELECT "contents".* FROM "contents"[0m
+  [1m[36mContent Load (0.5ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."text" = $1[0m  [["text", ""]]
+  [1m[36mHeadLine Load (0.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" WHERE "head_lines"."text" = $1[0m  [["text", ""]]
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" WHERE "head_lines"."text" = $1[0m  [["text", "jj"]]
+  [1m[36mHeadLine Load (0.5ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" WHERE "head_lines"."text" = $1[0m  [["text", "jj"]]
+Started POST "/content/create" for ::1 at 2017-01-02 16:56:53 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+  
+SyntaxError (c:/sites/dailypost/app/controllers/content_controller.rb:22: syntax error, unexpected keyword_else, expecting keyword_end
+c:/sites/dailypost/app/controllers/content_controller.rb:31: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/content_controller.rb:22: syntax error, unexpected keyword_else, expecting keyword_end
+app/controllers/content_controller.rb:31: syntax error, unexpected end-of-input, expecting keyword_end
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.0ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (1721.3ms)
+Started GET "/content/view" for ::1 at 2017-01-02 16:57:28 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+  
+SyntaxError (c:/sites/dailypost/app/controllers/content_controller.rb:20: syntax error, unexpected keyword_else
+c:/sites/dailypost/app/controllers/content_controller.rb:29: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/content_controller.rb:20: syntax error, unexpected keyword_else
+app/controllers/content_controller.rb:29: syntax error, unexpected end-of-input, expecting keyword_end
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.0ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (1746.0ms)
+Started POST "/content/create" for ::1 at 2017-01-02 16:57:51 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+  
+SyntaxError (c:/sites/dailypost/app/controllers/content_controller.rb:20: syntax error, unexpected keyword_else
+c:/sites/dailypost/app/controllers/content_controller.rb:29: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/content_controller.rb:20: syntax error, unexpected keyword_else
+app/controllers/content_controller.rb:29: syntax error, unexpected end-of-input, expecting keyword_end
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.0ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (1732.0ms)
+Started POST "/content/create" for ::1 at 2017-01-02 16:58:37 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+  
+SyntaxError (c:/sites/dailypost/app/controllers/content_controller.rb:20: syntax error, unexpected keyword_else, expecting keyword_end
+c:/sites/dailypost/app/controllers/content_controller.rb:29: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/content_controller.rb:20: syntax error, unexpected keyword_else, expecting keyword_end
+app/controllers/content_controller.rb:29: syntax error, unexpected end-of-input, expecting keyword_end
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.0ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (1717.9ms)
+Started POST "/content/create" for ::1 at 2017-01-02 16:59:08 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hv1i41Au//dr6Xmzd8LEG4kbcgP3JU66y4eQJjsLnt3MHsLZsFLujqpgJcJHxTZNWVbwKFMQSLPVOHSP4YX4CA==", "head_line"=>{"text"=>"ffdfd"}, "commit"=>"Create comment"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-02 16:59:08 UTC], ["updated_at", 2017-01-02 16:59:08 UTC], ["text", "ffdfd"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.0ms)
+
+
+  
+NoMethodError (undefined method `scan' for #<HeadLine:0xa872ac8>):
+  
+app/controllers/content_controller.rb:14:in `create'
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.0ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (1713.8ms)
+Started POST "/content/create" for ::1 at 2017-01-02 16:59:51 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hv1i41Au//dr6Xmzd8LEG4kbcgP3JU66y4eQJjsLnt3MHsLZsFLujqpgJcJHxTZNWVbwKFMQSLPVOHSP4YX4CA==", "head_line"=>{"text"=>"ffdfd"}, "commit"=>"Create comment"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-02 16:59:51 UTC], ["updated_at", 2017-01-02 16:59:51 UTC], ["text", "ffdfd"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 22ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-02 16:59:51 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (0.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 143ms (Views: 119.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/content/create" for ::1 at 2017-01-02 16:59:59 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"B48i1vaFH4qiWhbq/hS9iB9OE9ilCbB2NFyMBJQiK7xNbILsFvkO82PTSpvOE0/ezwOR8wE8tn8q42itTqxNaQ==", "head_line"=>{"text"=>"sfd @hop"}, "commit"=>"Create comment"}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-02 16:59:59 UTC], ["updated_at", 2017-01-02 16:59:59 UTC], ["text", "sfd @hop"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 11ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-02 16:59:59 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 139ms (Views: 114.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-02 17:08:28 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 153ms (Views: 122.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-02 17:08:31 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (0.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 144ms (Views: 114.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/content/create" for ::1 at 2017-01-02 17:08:35 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rUx1CATWofAgeL5eMx5igdfEuqEEFIwxpctYvJ1FWtLnr9Uy5KqwieHx4i8DGZDXB4k4iqAhiji7dLwVR8s8Bw==", "head_line"=>{"text"=>"@hdd"}, "commit"=>"Create comment"}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-02 17:08:35 UTC], ["updated_at", 2017-01-02 17:08:35 UTC], ["text", "@hdd"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 13ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-02 17:08:35 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (0.5ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 136ms (Views: 111.6ms | ActiveRecord: 0.5ms)
+
+
+  [1m[36mHeadLine Load (0.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" WHERE "head_lines"."text" = $1[0m  [["text", "XX"]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "head_lines" WHERE "head_lines"."text" = $1[0m  [["text", "XX"]]
+Started GET "/content/view" for ::1 at 2017-01-02 17:10:48 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (0.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 156ms (Views: 123.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/content/create" for ::1 at 2017-01-02 17:10:53 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+Ij04OP+yfVrPmODxDLYOnPHDbaVpcwAEHxYQLctF7Sya1TaA4LYjKq3P/L0NSpso4qPnTGQygkOw7zpbaNxYQ==", "head_line"=>{"text"=>"sjgg @i"}, "commit"=>"Create comment"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-02 17:10:53 UTC], ["updated_at", 2017-01-02 17:10:53 UTC], ["text", "sjgg @i"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects" WHERE "subjects"."name" = 'i'[0m
+Completed 302 Found in 28ms (ActiveRecord: 8.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-02 17:10:53 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (0.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 133ms (Views: 106.5ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "subjects" ("created_at", "updated_at", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-02 17:12:05 UTC], ["updated_at", 2017-01-02 17:12:05 UTC], ["name", "XX"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/content/create" for ::1 at 2017-01-02 17:12:26 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PCVGGDzsUxDB6KwrkA9HkSO0lYAGUYmad/Ujcm8Q5E52xuYi3JBCaQBh8FqgCLXH8/kXq6Jkj5NpSsfbtZ6Cmw==", "head_line"=>{"text"=>"lkld @plop"}, "commit"=>"Create comment"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-02 17:12:26 UTC], ["updated_at", 2017-01-02 17:12:26 UTC], ["text", "lkld @plop"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects" WHERE "subjects"."name" = 'plop'[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "subjects" ("created_at", "updated_at", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-02 17:12:26 UTC], ["updated_at", 2017-01-02 17:12:26 UTC], ["name", "[\"plop\"]"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 302 Found in 39ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-02 17:12:27 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (4.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 129ms (Views: 101.2ms | ActiveRecord: 4.0ms)
+
+
+  [1m[36mSubject Load (0.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects"[0m
+Started GET "/content/view" for ::1 at 2017-01-02 17:13:48 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (26.0ms)
+Completed 500 Internal Server Error in 116ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    14:      
+    15:       <% end %>
+    16: 
+    17:         	 <% @subs.each do |r| %>
+    18:       <%= r.name %>
+    19:      
+    20:       <% end %>
+  
+app/views/content/view.html.erb:17:in `_app_views_content_view_html_erb___949376376_80041068'
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1621.9ms)
+Started POST "/content/create" for ::1 at 2017-01-02 17:14:39 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hv1i41Au//dr6Xmzd8LEG4kbcgP3JU66y4eQJjsLnt3MHsLZsFLujqpgJcJHxTZNWVbwKFMQSLPVOHSP4YX4CA==", "head_line"=>{"text"=>"ffdfd"}, "commit"=>"Create comment"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-02 17:14:39 UTC], ["updated_at", 2017-01-02 17:14:39 UTC], ["text", "ffdfd"]]
+  [1m[35m (4.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 23ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-02 17:14:39 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (0.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 136ms (Views: 111.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/content/create" for ::1 at 2017-01-02 17:16:41 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UdhFC4GUt5ZZAs/GYiARa04s8OQ2Tktx5XNbbV45d1kbO+UxYeim75iLk7dSJ+M9nmFyz5J7TXj7zL/EhLcRjA==", "head_line"=>{"text"=>"@kk @iop ~'"}, "commit"=>"Create comment"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-02 17:16:41 UTC], ["updated_at", 2017-01-02 17:16:41 UTC], ["text", "@kk @iop ~'"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects" WHERE "subjects"."name" = 'kk'[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "subjects" ("created_at", "updated_at", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-02 17:16:41 UTC], ["updated_at", 2017-01-02 17:16:41 UTC], ["name", "[\"kk\"]"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects" WHERE "subjects"."name" = 'iop'[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "subjects" ("created_at", "updated_at", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-02 17:16:41 UTC], ["updated_at", 2017-01-02 17:16:41 UTC], ["name", "[\"iop\"]"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 302 Found in 29ms (ActiveRecord: 8.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-02 17:16:41 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (0.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (4.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 141ms (Views: 113.7ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/" for ::1 at 2017-01-02 20:59:00 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (0.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (4.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 244ms (Views: 204.8ms | ActiveRecord: 4.0ms)
+
+
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Started GET "/" for ::1 at 2017-01-04 19:37:25 +0000
+Started GET "/" for ::1 at 2017-01-04 19:37:25 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (2.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (5.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ContentController#view as HTML
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (3.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mHeadLine Load (4.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (1.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (1.6ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (156.5ms)
+  Rendered content/view.html.erb within layouts/application (162.2ms)
+Completed 500 Internal Server Error in 964ms (ActiveRecord: 15.5ms)
+
+
+  
+ActionView::Template::Error (Permission denied @ utime_failed - c:/sites/dailypost/tmp/cache/assets/sprockets/v3.0/vc/vctxGADqH5vT5CxmdP6AfEdZ4but7nATAhPjEB8sRr8.cache):
+    4:     <title>Dailypost</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___785491249_44016444'
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.0ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.0ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1824.5ms)
+Completed 200 OK in 8178ms (Views: 8050.7ms | ActiveRecord: 24.8ms)
+
+
+Started POST "/content/create" for ::1 at 2017-01-04 19:37:52 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SjWDLUtMDJY1j8cF6EtS8Zu9ks+QQ5HQkvvaN8lObGgpR3RG7TOgqXdfl6ZmC4gIiGcz2lI91HbgVJ4Yi8MkTg==", "head_line"=>{"text"=>"kfsgdfd @ds"}, "commit"=>"Create comment"}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-04 19:38:03 UTC], ["updated_at", 2017-01-04 19:38:03 UTC], ["text", "kfsgdfd @ds"]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects" WHERE "subjects"."name" = 'ds'[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "subjects" ("created_at", "updated_at", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-04 19:38:03 UTC], ["updated_at", 2017-01-04 19:38:03 UTC], ["name", "[\"ds\"]"]]
+  [1m[35m (42.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 302 Found in 155ms (ActiveRecord: 49.1ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-04 19:38:03 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (0.5ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 135ms (Views: 109.1ms | ActiveRecord: 1.5ms)
+
+
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Started POST "/content/create" for ::1 at 2017-01-05 07:12:09 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g7vNK4vKnlQtgintQ3sQ00vTE8OK8xwJCIRQ8UIxKBLgyTpALbUya29SeU7NO8oqWAmy1kiNWa96KxTeALxgNA==", "head_line"=>{"text"=>"dff @iop"}, "commit"=>"Create comment"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-05 07:12:09 UTC], ["updated_at", 2017-01-05 07:12:09 UTC], ["text", "dff @iop"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects" WHERE "subjects"."name" = 'iop'[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "subjects" ("created_at", "updated_at", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-05 07:12:09 UTC], ["updated_at", 2017-01-05 07:12:09 UTC], ["name", "[\"iop\"]"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 302 Found in 55ms (ActiveRecord: 5.5ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-05 07:12:09 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (2.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 170ms (Views: 139.9ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/content/create" for ::1 at 2017-01-05 07:31:42 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Vft+nV4oCPM6NRJse0+0lj7mRTf706l+A+k5SnUK+A42iYn2+FekzHjlQs/1D25vLTzkIjmt7NhxRn1lN4ewKA==", "head_line"=>{"text"=>"@[\"plop\"]"}, "commit"=>"Create comment"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-05 07:31:42 UTC], ["updated_at", 2017-01-05 07:31:42 UTC], ["text", "@[\"plop\"]"]]
+  [1m[35m (26.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 39ms (ActiveRecord: 28.9ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-05 07:31:42 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.5ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 144ms (Views: 116.9ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/content/create" for ::1 at 2017-01-05 07:32:01 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K/8AzsLhC3cHULNKfgPddmgZCgMFx/SRmJEzXQL4CR5IjfelZJ6nSEWA4+nwQwePe8OrFse5sTfqPndyQHVBOA==", "head_line"=>{"text"=>"@[\"plop\"]"}, "commit"=>"Create comment"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-05 07:32:01 UTC], ["updated_at", 2017-01-05 07:32:01 UTC], ["text", "@[\"plop\"]"]]
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 22ms (ActiveRecord: 9.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-05 07:32:01 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.5ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 155ms (Views: 127.3ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/content/create" for ::1 at 2017-01-05 07:32:21 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HlHrRspbs+HUf5vlM5SJ9yHIExQjmRAocsNA7kKM2NB9IxwtbCQf3pavy0a91FMOMhKyAeHnVY4AbATBAAGQ9g==", "head_line"=>{"text"=>"@sjsss"}, "commit"=>"Create comment"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-05 07:32:21 UTC], ["updated_at", 2017-01-05 07:32:21 UTC], ["text", "@sjsss"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects" WHERE "subjects"."name" = 'sjsss'[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "subjects" ("created_at", "updated_at", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-05 07:32:21 UTC], ["updated_at", 2017-01-05 07:32:21 UTC], ["name", "[\"sjsss\"]"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 302 Found in 24ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-05 07:32:21 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 151ms (Views: 123.8ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/content/create" for ::1 at 2017-01-05 07:32:42 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yhc4R8aRkG3vTu1ciPjM043g/szfHhFsoz2iT/20Q+ABZc8sYO48Uq2evf8GuBYqnjpf2R1gVMrRkuZgvzkLxg==", "head_line"=>{"text"=>"dfdf"}, "commit"=>"Create comment"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-05 07:32:42 UTC], ["updated_at", 2017-01-05 07:32:42 UTC], ["text", "dfdf"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 15ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-05 07:32:42 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (0.5ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 154ms (Views: 124.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/content/create" for ::1 at 2017-01-05 07:32:48 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Vv6TwnyydH0Uae1zynv3ZNHEynl7uqkhbnyH4MeihUI1jGSp2s3YQla5vdBEOy2dwh5rbLnE7Icc08PPhS/NZA==", "head_line"=>{"text"=>"@ddd"}, "commit"=>"Create comment"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-05 07:32:48 UTC], ["updated_at", 2017-01-05 07:32:48 UTC], ["text", "@ddd"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects" WHERE "subjects"."name" = 'ddd'[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "subjects" ("created_at", "updated_at", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-05 07:32:48 UTC], ["updated_at", 2017-01-05 07:32:48 UTC], ["name", "[\"ddd\"]"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 302 Found in 26ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-05 07:32:48 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (0.5ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 157ms (Views: 132.4ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/content/create" for ::1 at 2017-01-05 07:33:26 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6a6Kv2glA21mbo+9K170FTv5ZsuLYxAEN6GltNjoX0OK3H3UzlqvUiS+3x6lHi7sKCPH3kkdVaJFDuGbmmUXZQ==", "head_line"=>{"text"=>"jjjjjjjjjjjjjj"}, "commit"=>"Create comment"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-05 07:33:27 UTC], ["updated_at", 2017-01-05 07:33:27 UTC], ["text", "jjjjjjjjjjjjjj"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 12ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-05 07:33:27 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 169ms (Views: 143.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-05 07:34:37 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (0.5ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 154ms (Views: 126.6ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/content/create" for ::1 at 2017-01-05 07:34:47 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ThKQfWjOZthTm5j6GtdDX4rW40sNV2PGAcR9VcO+IXotYGcWzrHK5xFLyFmUl5mmmQxCXs8pJmBzazl6gTNpXA==", "head_line"=>{"text"=>"@ss"}, "commit"=>"Create comment"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-05 07:34:47 UTC], ["updated_at", 2017-01-05 07:34:47 UTC], ["text", "@ss"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects" WHERE "subjects"."name" = 'ss'[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "subjects" ("created_at", "updated_at", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-05 07:34:47 UTC], ["updated_at", 2017-01-05 07:34:47 UTC], ["name", "[\"ss\"]"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 302 Found in 19ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-05 07:34:47 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (0.5ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 139ms (Views: 113.9ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/content/create" for ::1 at 2017-01-05 07:34:59 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RkoN/q3VegTrCkjlLVNQ7JEBKeb/uJJI0wXXcRepgoslOPqVC6rWO6naGEajE4oVgtuI8z3G1+6hqpNeVSTKrQ==", "head_line"=>{"text"=>"ss"}, "commit"=>"Create comment"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-05 07:34:59 UTC], ["updated_at", 2017-01-05 07:34:59 UTC], ["text", "ss"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 7ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-05 07:34:59 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (0.5ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 139ms (Views: 111.5ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/content/create" for ::1 at 2017-01-05 07:35:05 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NLmAdBJMms2fR/DdaeLTMmkAH9P93nzR2TbgOFUpC2BXy3cftDM28t2XoH7nognLetq+xj+gOXermaQXF6RDRg==", "head_line"=>{"text"=>"@ss"}, "commit"=>"Create comment"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-05 07:35:05 UTC], ["updated_at", 2017-01-05 07:35:05 UTC], ["text", "@ss"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects" WHERE "subjects"."name" = 'ss'[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "subjects" ("created_at", "updated_at", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-05 07:35:05 UTC], ["updated_at", 2017-01-05 07:35:05 UTC], ["name", "[\"ss\"]"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 302 Found in 18ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-05 07:35:05 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 140ms (Views: 113.4ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/content/create" for ::1 at 2017-01-05 07:35:23 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rK2oXLneumuBKrNZ77l9yQROBqVmv9PoTcuFjbMufrHP3183H6EWVMP64/ph+acwF5SnsKTBlk4/ZMGi8aM2lw==", "head_line"=>{"text"=>"@[\"ss\"]"}, "commit"=>"Create comment"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-05 07:35:23 UTC], ["updated_at", 2017-01-05 07:35:23 UTC], ["text", "@[\"ss\"]"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 7ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-05 07:35:23 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (0.5ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 147ms (Views: 122.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/content/create" for ::1 at 2017-01-05 07:51:47 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CwyplnUG+1CELHlGW0LtuJXWTJiP0Km9TtH7CJ4aEzNofl7903lXb8b8KeXVAjdBhgztjU2u7Bs8fr8n3JdbFQ==", "head_line"=>{"text"=>"@hat"}, "commit"=>"Create comment"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-05 07:51:47 UTC], ["updated_at", 2017-01-05 07:51:47 UTC], ["text", "@hat"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects" WHERE "subjects"."name" = 'hat'[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "subjects" ("created_at", "updated_at", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-05 07:51:47 UTC], ["updated_at", 2017-01-05 07:51:47 UTC], ["name", "[\"hat\"]"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 302 Found in 44ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-05 07:51:47 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 144ms (Views: 118.3ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/content/create" for ::1 at 2017-01-05 07:52:06 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"StV1CaGMrX38qIZ3kRyk9IZ0jdjMLBbH6H2K3f0Z1cYpp4JiB/MBQr541tQfXH4Nla4szQ5SU2Ga0s7yv5Sd4A==", "head_line"=>{"text"=>"@coin"}, "commit"=>"Create comment"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-05 07:52:06 UTC], ["updated_at", 2017-01-05 07:52:06 UTC], ["text", "@coin"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects" WHERE "subjects"."name" = 'coin'[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "subjects" ("created_at", "updated_at", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-05 07:52:06 UTC], ["updated_at", 2017-01-05 07:52:06 UTC], ["name", "[\"coin\"]"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 302 Found in 39ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-05 07:52:06 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (0.5ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 140ms (Views: 113.1ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/content/create" for ::1 at 2017-01-05 07:53:35 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2PQkczgktISFZ1xuMlLnzhyivkPFR9GmIREP+j2Cwre7htMYnlsYu8e3DM28Ej03D3gfVgc5lABTvkvVfw+KkQ==", "head_line"=>{"text"=>"@op"}, "commit"=>"Create comment"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-05 07:53:35 UTC], ["updated_at", 2017-01-05 07:53:35 UTC], ["text", "@op"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects" WHERE "subjects"."name" IS NULL[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "subjects" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", 2017-01-05 07:53:35 UTC], ["updated_at", 2017-01-05 07:53:35 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 302 Found in 41ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-05 07:53:35 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 152ms (Views: 123.8ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/content/create" for ::1 at 2017-01-05 07:53:43 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WVW66UZXivDCBDfyM1/gEQif56TvIDym4psZcOJrUPs6J02C4Cgmz4DUZ1G9HzroG0VGsS1eeQCQNF1foOYY3Q==", "head_line"=>{"text"=>"sss"}, "commit"=>"Create comment"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-05 07:53:43 UTC], ["updated_at", 2017-01-05 07:53:43 UTC], ["text", "sss"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 14ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-05 07:53:43 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 155ms (Views: 129.3ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/content/create" for ::1 at 2017-01-05 07:53:51 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nl8RrggvUD/UnY4+y/AIBf8UfwEjqMfpKZ+I0rjmnS79LebFrlD8AJZN3p1FsNL87M7eFOHWgk9bMMz9+mvVCA==", "head_line"=>{"text"=>"@jjjjjjjj"}, "commit"=>"Create comment"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-05 07:53:51 UTC], ["updated_at", 2017-01-05 07:53:51 UTC], ["text", "@jjjjjjjj"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects" WHERE "subjects"."name" IS NULL[0m
+Completed 302 Found in 12ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-05 07:53:51 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 146ms (Views: 119.8ms | ActiveRecord: 1.5ms)
+
+
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Started GET "/" for ::1 at 2017-01-09 07:17:53 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (38.5ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (86.1ms)
+Completed 200 OK in 435ms (Views: 309.2ms | ActiveRecord: 39.0ms)
+
+
+Started GET "/" for ::1 at 2017-01-09 07:17:54 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.5ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 152ms (Views: 123.4ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/content/create" for ::1 at 2017-01-09 07:19:59 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QFw/Ehli8HO6K42cPEFMO2EqumQmt5VW4RTLnS690xLX1TfLpg1TsnOEQUyI1NHAoG0zGyISzvYP6AvCrJVdRw==", "head_line"=>{"text"=>"@cocky"}, "commit"=>"Create comment"}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (38.9ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-09 07:19:59 UTC], ["updated_at", 2017-01-09 07:19:59 UTC], ["text", "@cocky"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+  [1m[35m (5.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects" WHERE "subjects"."name" = $1[0m  [["name", ""]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "subjects" ("created_at", "updated_at", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-09 07:19:59 UTC], ["updated_at", 2017-01-09 07:19:59 UTC], ["name", ""]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 302 Found in 88ms (ActiveRecord: 48.5ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-09 07:19:59 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (0.5ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 153ms (Views: 127.0ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/content/create" for ::1 at 2017-01-09 07:21:25 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"prShl47q6GZ3zIrksomcP4aXZJDnwiImN0VsVTYouYAxPalOMYVLp75jRjQGHAHER9Dt7+NneYbZuawKtAA31Q==", "head_line"=>{"text"=>"@blas"}, "commit"=>"Create comment"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-09 07:21:25 UTC], ["updated_at", 2017-01-09 07:21:25 UTC], ["text", "@blas"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects" WHERE "subjects"."name" = $1[0m  [["name", "[\"blas\"]"]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "subjects" ("created_at", "updated_at", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-09 07:21:25 UTC], ["updated_at", 2017-01-09 07:21:25 UTC], ["name", "[\"blas\"]"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 302 Found in 47ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-09 07:21:25 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (2.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 164ms (Views: 136.0ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/content/create" for ::1 at 2017-01-09 07:22:08 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FEAQf4+roxNd2hWDiJX1HYSaa9AWpmY5jaPwgbyX1MmDyRimMMQA0pR12VM8AGjmRd3irxIDPZljXzDePr9anA==", "head_line"=>{"text"=>"@hhh"}, "commit"=>"Create comment"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-09 07:22:08 UTC], ["updated_at", 2017-01-09 07:22:08 UTC], ["text", "@hhh"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects" WHERE "subjects"."name" = $1[0m  [["name", "\"hhh\"]"]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "subjects" ("created_at", "updated_at", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-09 07:22:08 UTC], ["updated_at", 2017-01-09 07:22:08 UTC], ["name", "\"hhh\"]"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 302 Found in 41ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-09 07:22:08 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.5ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 146ms (Views: 118.6ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/content/create" for ::1 at 2017-01-09 07:22:41 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TdbRJ8RsM5XcGn3p4rBacT3oXVYrsQ5PDBH/2b698rraX9n+ewOQVBW1sTlWJceK/K/UKS8UVe/i7T+GPJV87w==", "head_line"=>{"text"=>"@hhhh"}, "commit"=>"Create comment"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-09 07:22:41 UTC], ["updated_at", 2017-01-09 07:22:41 UTC], ["text", "@hhhh"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects" WHERE "subjects"."name" = $1[0m  [["name", "\"hhhh\"]"]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "subjects" ("created_at", "updated_at", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-09 07:22:41 UTC], ["updated_at", 2017-01-09 07:22:41 UTC], ["name", "\"hhhh\"]"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 302 Found in 43ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-09 07:22:41 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 143ms (Views: 118.8ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/content/create" for ::1 at 2017-01-09 07:23:04 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"m6gDz2z4wA6MNCkEcO+uIfHsLSddJdaLo5WyK5UfJ7YMIQsW05djz0Wb5dTEejPaMKukWFmAjStNaXJ0Fzep4w==", "head_line"=>{"text"=>"@gas"}, "commit"=>"Create comment"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-09 07:23:04 UTC], ["updated_at", 2017-01-09 07:23:04 UTC], ["text", "@gas"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects" WHERE "subjects"."name" = $1[0m  [["name", "\"gas\"]"]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "subjects" ("created_at", "updated_at", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-09 07:23:04 UTC], ["updated_at", 2017-01-09 07:23:04 UTC], ["name", "\"gas\"]"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 302 Found in 43ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-09 07:23:04 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 143ms (Views: 115.3ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/content/create" for ::1 at 2017-01-09 07:23:18 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LL3E3/uhJsBK5hFI6vTh/XesNVYfjQnv0gU7oFuR3hC7NMwGRM6FAYNJ3ZheYXwGtuu8KRsoUk88+fv/2blQRQ==", "head_line"=>{"text"=>"@balls"}, "commit"=>"Create comment"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-09 07:23:18 UTC], ["updated_at", 2017-01-09 07:23:18 UTC], ["text", "@balls"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects" WHERE "subjects"."name" = $1[0m  [["name", "balls\"]"]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "subjects" ("created_at", "updated_at", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-09 07:23:18 UTC], ["updated_at", 2017-01-09 07:23:18 UTC], ["name", "balls\"]"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 302 Found in 38ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-09 07:23:18 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (0.5ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 151ms (Views: 125.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/content/create" for ::1 at 2017-01-09 07:25:13 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KGX/EdsMM/aP3iJE518JfUu+gjovQBJkXyzYpqyH07m/7PfIZGOQN0Zx7pRTypSGivkLRSvlScSx0Bj5Lq9d7A==", "head_line"=>{"text"=>"@please"}, "commit"=>"Create comment"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-09 07:25:13 UTC], ["updated_at", 2017-01-09 07:25:13 UTC], ["text", "@please"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects" WHERE "subjects"."name" = $1[0m  [["name", "please"]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "subjects" ("created_at", "updated_at", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-09 07:25:13 UTC], ["updated_at", 2017-01-09 07:25:13 UTC], ["name", "please"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 302 Found in 39ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-09 07:25:13 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 151ms (Views: 123.3ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/content/create" for ::1 at 2017-01-09 07:25:21 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nghMN693gsyB0WUYtLnCkjSqLR3LiiPCf2FpuvPUGhgJgUTuEBghDUh+qcgALF9p9e2kYs8veGKRnanlcfyUTQ==", "head_line"=>{"text"=>"@please"}, "commit"=>"Create comment"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-09 07:25:21 UTC], ["updated_at", 2017-01-09 07:25:21 UTC], ["text", "@please"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects" WHERE "subjects"."name" = $1[0m  [["name", "please"]]
+Completed 302 Found in 14ms (ActiveRecord: 5.5ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-09 07:25:21 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (1.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 139ms (Views: 112.3ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/content/create" for ::1 at 2017-01-09 07:25:34 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"btrxZfZ4cCXyiJZQRMV60/r3iPe0fxb/zJTOYB3SNSr5U/m8SRfT5DsnWoDwUOcoO7ABiLDaTV8iaA4/n/q7fw==", "head_line"=>{"text"=>"@please @luck"}, "commit"=>"Create comment"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-09 07:25:34 UTC], ["updated_at", 2017-01-09 07:25:34 UTC], ["text", "@please @luck"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects" WHERE "subjects"."name" = $1[0m  [["name", "please"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects" WHERE "subjects"."name" = $1[0m  [["name", "luck"]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "subjects" ("created_at", "updated_at", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-01-09 07:25:34 UTC], ["updated_at", 2017-01-09 07:25:34 UTC], ["name", "luck"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 302 Found in 25ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-09 07:25:34 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (0.5ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 144ms (Views: 118.7ms | ActiveRecord: 1.0ms)
+
+
