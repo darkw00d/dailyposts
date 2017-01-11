@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170102152500) do
+ActiveRecord::Schema.define(version: 20170111203026) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,8 +37,12 @@ ActiveRecord::Schema.define(version: 20170102152500) do
     t.datetime "updated_at",             null: false
     t.string   "text",       limit: 200
     t.integer  "score"
-    t.integer  "subject_id"
-    t.index ["subject_id"], name: "index_head_lines_on_subject_id", using: :btree
+  end
+
+  create_table "head_lines_subjects", id: false, force: :cascade do |t|
+    t.integer "head_line_id"
+    t.integer "subject_id"
+    t.index ["head_line_id", "subject_id"], name: "index_head_lines_subjects_on_head_line_id_and_subject_id", using: :btree
   end
 
   create_table "subjects", force: :cascade do |t|

@@ -10,7 +10,7 @@ def create
 
 @head = HeadLine.new(head_params)
     if @head.save
-  
+     redirect_to(:controller => 'content', :action => 'view')
      subjects = @head.text.scan(/@([a-z0-9_]+)/i)
 subjects.each do |s|
 	z = s.to_s
@@ -21,19 +21,23 @@ z[(h-2)...(h)]=''
 if Subject.where(:name=> z).empty?
 newsub = Subject.new(:name=> z)
 newsub.save 
+
+newsub.head_lines << @head
+
 else
 end
 end
        else
  
-    redirect_to(:controller => 'content', :action => 'view')
+ 
   end
 
 
 end
 
-def selected
+def selecthead
 @selected = Subject.find(params[:id])
+@headlines = @selected.head_lines
 render 'selected'
 end
 

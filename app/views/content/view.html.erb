@@ -10,14 +10,14 @@
   <% end %>
 
   	 <% @top.each do |r| %>
-      <%= r.text %>
-     
+   
+        <td><%= link_to(r.text, {:action => 'selecthead', :id => r}) %> </td> 
       <% end %>
 
 <p>subjects </p>
 
         	 <% @subs.each do |r| %>
-     <td><%= link_to(r.name, {:action => 'selected', :id => r}) %> </td>
+     <td><%= link_to(r.name, {:action => 'selectsub', :id => r}) %> </td>
     
      
       <% end %>
