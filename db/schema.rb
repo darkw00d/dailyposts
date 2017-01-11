@@ -37,6 +37,8 @@ ActiveRecord::Schema.define(version: 20170102152500) do
     t.datetime "updated_at",             null: false
     t.string   "text",       limit: 200
     t.integer  "score"
+    t.integer  "subject_id"
+    t.index ["subject_id"], name: "index_head_lines_on_subject_id", using: :btree
   end
 
   create_table "subjects", force: :cascade do |t|

@@ -10,7 +10,7 @@ def create
 
 @head = HeadLine.new(head_params)
     if @head.save
-      redirect_to(:controller => 'content', :action => 'view')
+  
      subjects = @head.text.scan(/@([a-z0-9_]+)/i)
 subjects.each do |s|
 	z = s.to_s
@@ -25,10 +25,18 @@ else
 end
 end
        else
+ 
+    redirect_to(:controller => 'content', :action => 'view')
   end
 
 
 end
+
+def selected
+@selected = Subject.find(params[:id])
+render 'selected'
+end
+
 
     def head_params
 

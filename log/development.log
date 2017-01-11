@@ -1375,3 +1375,2651 @@ Processing by ContentController#view as HTML
 Completed 200 OK in 144ms (Views: 118.7ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/" for ::1 at 2017-01-11 12:19:16 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Processing by ContentController#view as HTML
+Started GET "/" for ::1 at 2017-01-11 12:19:17 +0000
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (118.3ms)
+Completed 200 OK in 309ms (Views: 184.1ms | ActiveRecord: 89.2ms)
+
+
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (0.5ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 162ms (Views: 132.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2017-01-11 12:21:19 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 152ms (Views: 124.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2017-01-11 12:25:22 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (21.3ms)
+Completed 200 OK in 179ms (Views: 146.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:25:26 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (1 for 0)):
+  
+app/controllers/content_controller.rb:34:in `select'
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.5ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (1674.2ms)
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:08 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:08 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:08 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:08 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:08 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:08 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:08 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:08 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:08 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:08 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:08 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:08 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:08 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:08 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:08 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:08 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:08 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:09 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:09 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:09 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:09 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:09 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:09 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:09 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:09 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:09 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:09 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:09 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:09 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:09 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:09 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:09 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:09 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:09 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:09 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:09 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:09 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:09 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:10 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:10 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:10 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:10 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:14 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:14 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:14 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:14 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:15 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:15 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:15 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:15 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:15 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:15 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:15 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:15 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:15 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:15 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:15 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:15 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:15 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:15 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:15 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:15 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:15 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-01-11 12:27:17 +0000
+Processing by ContentController#view as HTML
+Started GET "/" for ::1 at 2017-01-11 12:27:17 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (64.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mSubject Load (1.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (86.1ms)
+  [1m[36mHeadLine Load (11.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (3.8ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (30.3ms)
+Completed 200 OK in 335ms (Views: 215.8ms | ActiveRecord: 65.5ms)
+
+
+Completed 200 OK in 202ms (Views: 163.9ms | ActiveRecord: 14.8ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:20 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:20 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:20 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:20 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:20 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:20 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:20 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:20 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:20 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:20 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:20 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:21 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:21 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:21 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:21 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:21 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:21 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:21 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:21 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:21 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:21 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:21 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:21 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:21 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:21 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:21 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:21 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:21 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:21 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:21 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:21 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:21 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:21 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:21 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:22 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:22 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:22 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:22 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:22 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:22 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:22 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:22 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:22 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:22 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:22 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:22 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:22 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:22 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:22 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:22 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:22 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:22 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:22 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:22 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:22 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:22 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:22 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:23 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:23 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:23 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:23 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:23 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:23 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:28 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:28 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:28 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:28 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:28 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:28 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:28 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:28 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:28 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:28 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:28 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:28 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:28 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:28 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:28 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:28 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:28 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:28 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:29 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:29 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:29 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:35 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:35 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:35 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:35 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:35 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:35 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:35 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:35 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:35 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:35 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:35 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:35 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:35 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:35 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:35 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:35 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:35 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:35 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:35 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:36 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/21" for ::1 at 2017-01-11 12:27:36 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"21"}
+Redirected to http://localhost:3000/content/select/21
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-01-11 12:27:38 +0000
+Started GET "/" for ::1 at 2017-01-11 12:27:38 +0000
+Processing by ContentController#view as HTML
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (3.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (1.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (17.1ms)
+  Rendered content/view.html.erb within layouts/application (18.5ms)
+Completed 500 Internal Server Error in 231ms (ActiveRecord: 4.5ms)
+
+
+  
+ActionView::Template::Error (Permission denied @ utime_failed - c:/sites/dailypost/tmp/cache/assets/sprockets/v3.0/qP/qPmv5snMrDw830S6hSICDcnIy7kVEWoFKXhGKT38lG4.cache):
+    4:     <title>Dailypost</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___785491249_92917812'
+Completed 200 OK in 433ms (Views: 384.8ms | ActiveRecord: 1.5ms)
+
+
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.0ms)
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:41 +0000
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+Processing by ContentController#select as HTML
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.5ms)
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1703.6ms)
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:42 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:44 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 459ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:45 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 450ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:46 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:46 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:46 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:46 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:46 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:46 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:46 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:46 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:46 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:46 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:46 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:46 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:46 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:46 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:46 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:46 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:46 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:46 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:46 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:46 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:46 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:46 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:47 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:47 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:47 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:47 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:47 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:47 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:47 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:47 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:47 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:47 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:47 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:47 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:47 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:47 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:47 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:47 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:47 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:47 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:47 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:47 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:47 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:47 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:47 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:48 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:48 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:48 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:48 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:48 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:48 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:48 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:48 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:48 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:48 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:48 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:48 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:48 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:48 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:53 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:53 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:53 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:53 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:53 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:53 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:53 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:53 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:53 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:53 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:53 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:54 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:54 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:54 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:54 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:54 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:54 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:54 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:54 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:54 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:27:54 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:28:24 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:28:24 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:28:24 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:28:24 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:28:24 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:28:24 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:28:24 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:28:24 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:28:24 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:28:24 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:28:24 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:28:24 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:28:24 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:28:25 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:28:25 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:28:25 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:28:25 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:28:25 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:28:25 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:28:25 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:28:25 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:29:25 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:29:25 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:29:25 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:29:25 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:29:25 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:29:25 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:29:25 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:29:25 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:29:25 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:29:25 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:29:25 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:29:25 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:29:25 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:29:25 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:29:25 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:29:25 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:29:25 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:29:26 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:29:26 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:29:26 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/select/5" for ::1 at 2017-01-11 12:29:26 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:3000/content/select/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-01-11 12:31:33 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Processing by ContentController#view as HTML
+Started GET "/" for ::1 at 2017-01-11 12:31:33 +0000
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (0.5ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 198ms (Views: 146.3ms | ActiveRecord: 1.0ms)
+
+
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (0.5ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (1.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 164ms (Views: 126.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/content/select/6" for ::1 at 2017-01-11 12:31:35 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"6"}
+Redirected to http://localhost:3000/content/selected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/selected" for ::1 at 2017-01-11 12:31:35 +0000
+Processing by ContentController#selected as HTML
+  Rendering content/selected.erb within layouts/application
+  Rendered content/selected.erb within layouts/application (23.0ms)
+Completed 500 Internal Server Error in 104ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    2: <p>Find me in app/views/content/view.html.erb</p>
+    3: 
+    4: 
+    5:   	 <% @selected.each do |r| %>
+    6:       <%= r.name %>
+    7:      
+    8:       <% end %>
+  
+app/views/content/selected.erb:5:in `_app_views_content_selected_erb__93476495_104699760'
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.0ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1652.7ms)
+Started GET "/" for ::1 at 2017-01-11 12:32:23 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (0.5ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 162ms (Views: 128.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/content/select/4" for ::1 at 2017-01-11 12:32:26 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"4"}
+Redirected to http://localhost:3000/content/selected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/selected" for ::1 at 2017-01-11 12:32:26 +0000
+Processing by ContentController#selected as HTML
+  Rendering content/selected.erb within layouts/application
+  Rendered content/selected.erb within layouts/application (21.0ms)
+Completed 500 Internal Server Error in 102ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    2: <p>Find me in app/views/content/view.html.erb</p>
+    3: 
+    4: 
+    5:   	 <%= @selected.name %>
+    6:      
+    7:  
+  
+app/views/content/selected.erb:5:in `_app_views_content_selected_erb__93476495_101667144'
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.0ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1643.3ms)
+Started GET "/" for ::1 at 2017-01-11 12:33:56 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (0.5ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 173ms (Views: 133.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/content/select/9" for ::1 at 2017-01-11 12:33:58 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 876ms (ActiveRecord: 15.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Subject with 'id'={:id=>"9"}):
+  
+app/controllers/content_controller.rb:34:in `select'
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.5ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (1671.3ms)
+Started GET "/" for ::1 at 2017-01-11 12:34:10 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (0.5ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 157ms (Views: 125.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/content/select/12" for ::1 at 2017-01-11 12:34:23 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+Redirected to http://localhost:3000/content/selected
+Completed 302 Found in 25ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/content/selected" for ::1 at 2017-01-11 12:34:23 +0000
+Processing by ContentController#selected as HTML
+  Rendering content/selected.erb within layouts/application
+  Rendered content/selected.erb within layouts/application (22.5ms)
+Completed 500 Internal Server Error in 106ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    2: <p>Find me in app/views/content/view.html.erb</p>
+    3: 
+    4: 
+    5:   	 <%= @selected.name %>
+    6:      
+    7:  
+  
+app/views/content/selected.erb:5:in `_app_views_content_selected_erb__93476495_94021572'
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.0ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1647.7ms)
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+Started GET "/" for ::1 at 2017-01-11 12:43:51 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (23.2ms)
+Completed 200 OK in 174ms (Views: 135.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/content/select/8" for ::1 at 2017-01-11 12:43:54 +0000
+Processing by ContentController#select as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Redirected to http://localhost:3000/content/selected
+Completed 302 Found in 7ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/content/selected" for ::1 at 2017-01-11 12:43:54 +0000
+Processing by ContentController#selected as HTML
+  Rendering content/selected.erb within layouts/application
+  Rendered content/selected.erb within layouts/application (22.0ms)
+Completed 500 Internal Server Error in 103ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    2: <p>Find me in app/views/content/view.html.erb</p>
+    3: 
+    4: 
+    5:   	 <%= @selected.name %>
+    6:      
+    7:  
+  
+app/views/content/selected.erb:5:in `_app_views_content_selected_erb__93476495_105182544'
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.0ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1618.7ms)
+Started GET "/" for ::1 at 2017-01-11 12:44:55 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (0.5ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (21.5ms)
+Completed 200 OK in 187ms (Views: 149.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/content/select/10" for ::1 at 2017-01-11 12:44:57 +0000
+  
+AbstractController::ActionNotFound (The action 'select' could not be found for ContentController):
+  
+actionpack (5.0.1) lib/abstract_controller/base.rb:121:in `process'
+actionview (5.0.1) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.1) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.1) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (1.0ms)
+Started GET "/" for ::1 at 2017-01-11 12:45:25 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 156ms (Views: 125.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/content/selected/11" for ::1 at 2017-01-11 12:45:27 +0000
+Processing by ContentController#selected as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering content/selected.erb within layouts/application
+  Rendered content/selected.erb within layouts/application (0.5ms)
+Completed 200 OK in 111ms (Views: 106.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/content/selected/18" for ::1 at 2017-01-11 12:45:32 +0000
+Processing by ContentController#selected as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering content/selected.erb within layouts/application
+  Rendered content/selected.erb within layouts/application (0.5ms)
+Completed 200 OK in 111ms (Views: 106.4ms | ActiveRecord: 1.0ms)
+
+
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+  [1m[35m (9.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(751951996379702895);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(751951996379702895)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(751951996379702895);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateContents (20170102152500)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (73.9ms)[0m  [1m[35mDROP TABLE "contents"[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20170102152500"]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateHeadLines (20170102152442)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "head_lines"[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20170102152442"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateThemes (20170102152413)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.5ms)[0m  [1m[35mDROP TABLE "themes"[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20170102152413"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSubjects (20170102152342)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE "subjects"[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20170102152342"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEditors (20170102152320)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.0ms)[0m  [1m[35mDROP TABLE "editors"[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20170102152320"]]
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(751951996379702895)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(751951996379702895);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateEditors (20170102152320)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (107.3ms)[0m  [1m[35mCREATE TABLE "editors" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "email" character varying(25), "username" character varying(15), "password" character varying(15), "location" character varying, "points" integer)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170102152320"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSubjects (20170102152342)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE "subjects" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "name" character varying(25), "mentions" integer)[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170102152342"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateThemes (20170102152413)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE "themes" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "name" character varying(25), "mentions" integer)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170102152413"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateHeadLines (20170102152442)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE "head_lines" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "text" character varying(200), "score" integer, "subject_id" integer)[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE  INDEX  "index_head_lines_on_subject_id" ON "head_lines"  ("subject_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170102152442"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateContents (20170102152500)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "contents" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "text" character varying(200), "score" integer)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170102152500"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(751951996379702895)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Started GET "/" for ::1 at 2017-01-11 12:57:10 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ContentController#view as HTML
+Completed 500 Internal Server Error in 81ms (ActiveRecord: 2.0ms)
+
+
+  
+NoMethodError (undefined method `belongs_to_many' for #<Class:0x543acb0>):
+  
+app/models/head_line.rb:2:in `<class:HeadLine>'
+app/models/head_line.rb:1:in `<top (required)>'
+app/controllers/content_controller.rb:5:in `view'
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.0ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (1812.9ms)
+Started GET "/" for ::1 at 2017-01-11 12:58:16 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (2.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (193.4ms)
+Completed 200 OK in 847ms (Views: 713.7ms | ActiveRecord: 4.5ms)
+
+
+Started POST "/content/create" for ::1 at 2017-01-11 12:58:42 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QXVsoFuDMjuEBUjn8QtfcIfqL+Cou9qkY7xwBg1LKqTeusnQDuBtMZD93xZnYiW0k/bKjIvDeaopETCDkElvfA==", "head_line"=>{"text"=>"@pipe goes yip"}, "commit"=>"Create comment"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+No template found for ContentController#create, rendering head :no_content
+Completed 204 No Content in 1197ms (ActiveRecord: 8.5ms)
+
+
+Started POST "/content/create" for ::1 at 2017-01-11 13:00:46 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QXVsoFuDMjuEBUjn8QtfcIfqL+Cou9qkY7xwBg1LKqTeusnQDuBtMZD93xZnYiW0k/bKjIvDeaopETCDkElvfA==", "head_line"=>{"text"=>"@pipe goes yip"}, "commit"=>"Create comment"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 32ms (ActiveRecord: 8.5ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-11 13:00:46 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.5ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 144ms (Views: 110.8ms | ActiveRecord: 5.0ms)
+
+
+Started POST "/content/create" for ::1 at 2017-01-11 13:01:01 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/3LPdgw+NyMDeFauMh0UyMkrkCrnXOlwjbOTvk+MbAZgvWoGWV1oKReAwV+kdG4M3Td1RsQkSn7HHtM70o4p3g==", "head_line"=>{"text"=>"sdfsdf"}, "commit"=>"Create comment"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-11 13:01:01 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (0.5ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 132ms (Views: 108.2ms | ActiveRecord: 1.0ms)
+
+
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m

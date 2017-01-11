@@ -17,6 +17,9 @@
 <p>subjects </p>
 
         	 <% @subs.each do |r| %>
-      <%= r.name %>
+     <td><%= link_to(r.name, {:action => 'selected', :id => r}) %> </td>
+    
      
       <% end %>
+
+
