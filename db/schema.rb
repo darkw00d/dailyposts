@@ -16,10 +16,12 @@ ActiveRecord::Schema.define(version: 20170111203026) do
   enable_extension "plpgsql"
 
   create_table "contents", force: :cascade do |t|
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.string   "text",       limit: 200
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.string   "text",         limit: 200
     t.integer  "score"
+    t.integer  "head_line_id"
+    t.index ["head_line_id"], name: "index_contents_on_head_line_id", using: :btree
   end
 
   create_table "editors", force: :cascade do |t|

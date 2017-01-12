@@ -5,8 +5,10 @@ class CreateContents < ActiveRecord::Migration[5.0]
 
 t.string "text", :limit => 200
 t.integer "score"
-
+t.integer "head_line_id"
     end
+
+add_index :contents, ["head_line_id"]
 
 end
      def down
@@ -15,3 +17,5 @@ end
     end
   end
 end
+
+

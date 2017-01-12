@@ -2,26 +2,29 @@
 <p>Find me in app/views/content/view.html.erb</p>
 
 <% if @switch == "s" %>
- <p> subject </p>
   	 <%= @selected.name %>
 
   	   	 <% @headlines.each do |r| %>
       <%= r.text %>
-   <%= link_to("+", {:action => 'contentadd', :id => r.id}) %>       
-      
+            <td><%= link_to("+", {:action => 'contentadd', :id => r.id}) %> </td>
       <% end %>
+     <%else%>
 
-     <%elsif @switch == "h" %>
-<p> head </p>
    	 <%= @selected.text %>
 
   	   	 <% @headlines.each do |r| %>
-    
-
       <%= r.text %>
- <%= link_to("+", {:action => 'contentadd', :id => r.id}) %>  
+
+
 
       <% end %>
      <% end %>
 
 
+<%= form_for(:content, :url => {:action => 'add'},:html =>{:multipart => true}) do |f| %>
+  <%= f.text_field(:text) %>
+     <div class="form-buttons">
+      <%= submit_tag('Create comment') %>
+    </div>
+
+  <% end %>
