@@ -16,29 +16,34 @@ ActiveRecord::Schema.define(version: 20170111203026) do
   enable_extension "plpgsql"
 
   create_table "contents", force: :cascade do |t|
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
     t.string   "text",         limit: 200
-    t.integer  "score"
+    t.integer  "score",                    default: 0
+    t.integer  "place"
     t.integer  "head_line_id"
+    t.integer  "theme_id"
     t.index ["head_line_id"], name: "index_contents_on_head_line_id", using: :btree
+    t.index ["theme_id"], name: "index_contents_on_theme_id", using: :btree
   end
 
   create_table "editors", force: :cascade do |t|
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.string   "email",      limit: 25
     t.string   "username",   limit: 15
     t.string   "password",   limit: 15
     t.string   "location"
-    t.integer  "points"
+    t.integer  "points",                default: 0
   end
 
   create_table "head_lines", force: :cascade do |t|
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.string   "text",       limit: 200
-    t.integer  "score"
+    t.integer  "score",                  default: 0
+    t.integer  "theme_id"
+    t.index ["theme_id"], name: "index_head_lines_on_theme_id", using: :btree
   end
 
   create_table "head_lines_subjects", id: false, force: :cascade do |t|
@@ -48,10 +53,10 @@ ActiveRecord::Schema.define(version: 20170111203026) do
   end
 
   create_table "subjects", force: :cascade do |t|
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.string   "name",       limit: 25
-    t.integer  "mentions"
+    t.integer  "score",                 default: 0
   end
 
   create_table "themes", force: :cascade do |t|

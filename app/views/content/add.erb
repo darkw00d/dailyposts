@@ -1,27 +1,8 @@
-<h1>Content#view</h1>
-<p>Find me in app/views/content/view.html.erb</p>
+<h1>Add</h1>
+<p><%= @headlines.text %></p>
+<%= @place %>
 
-<% if @switch == "s" %>
-  	 <%= @selected.name %>
-
-  	   	 <% @headlines.each do |r| %>
-      <%= r.text %>
-            <td><%= link_to("+", {:action => 'contentadd', :id => r.id}) %> </td>
-      <% end %>
-     <%else%>
-
-   	 <%= @selected.text %>
-
-  	   	 <% @headlines.each do |r| %>
-      <%= r.text %>
-
-
-
-      <% end %>
-     <% end %>
-
-
-<%= form_for(:content, :url => {:action => 'add'},:html =>{:multipart => true}) do |f| %>
+<%= form_for(:content, :url => {:action => 'add', :headline => @headlines, :place => @place},:html =>{:multipart => true}) do |f| %>
   <%= f.text_field(:text) %>
      <div class="form-buttons">
       <%= submit_tag('Create comment') %>

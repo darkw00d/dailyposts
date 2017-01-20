@@ -8,7 +8,7 @@ t.string "email", :limit => 25
 t.string "username", :limit => 15
 t.string "password", :limit => 15
 t.string "location"
-t.integer "points"
+t.integer "points", :default =>0
     end
 
 end

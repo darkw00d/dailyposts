@@ -4,7 +4,7 @@ class CreateSubjects < ActiveRecord::Migration[5.0]
       t.timestamps null: false
 
 t.string "name", :limit => 25
-t.integer "mentions"
+t.integer "score" ,:default =>0
 
     end
 

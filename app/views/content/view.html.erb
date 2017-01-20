@@ -1,5 +1,5 @@
-<h1>Content#view</h1>
-<p>Find me in app/views/content/view.html.erb</p>
+<h1>Main page</h1>
+
 
 <%= form_for(:head_line, :url => {:action => 'create'},:html =>{:multipart => true}) do |f| %>
   <%= f.text_field(:text) %>
@@ -23,3 +23,10 @@
       <% end %>
 
 
+<p>themes </p>
+
+           <% @theme.each do |r| %>
+     <td><%= link_to(r.name, {:action => 'selectsub', :id => r}) %> </td>
+    
+     
+      <% end %>

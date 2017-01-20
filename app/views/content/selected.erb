@@ -1,27 +1,45 @@
-<h1>Content#view</h1>
-<p>Find me in app/views/content/view.html.erb</p>
+<h1>Selected</h1>
+
 
 <% if @switch == "s" %>
+ 
+
  <p> subject </p>
   	 <%= @selected.name %>
 
   	   	 <% @headlines.each do |r| %>
       <%= r.text %>
-   <%= link_to("+", {:action => 'contentadd', :id => r.id}) %>       
-      
-      <% end %>
-
-     <%elsif @switch == "h" %>
-<p> head </p>
-   	 <%= @selected.text %>
-
-  	   	 <% @headlines.each do |r| %>
-    
-
-      <%= r.text %>
- <%= link_to("+", {:action => 'contentadd', :id => r.id}) %>  
-
-      <% end %>
+  
      <% end %>
 
 
+     <%elsif @switch == "h" %>
+<p> head </p>
+   
+   	<% if @selected.contents.empty? %>
+<p> empty </p>
+   	 <%= @selected.text %>
+ <%= link_to("+", {:action => 'contentadd', :id => @selected.id, :place => 0}) %> 
+
+
+   <% else %>
+
+   	 <%= @selected.text %>
+
+  	   	 <% @selected.contents.sorted.each do |r| %>
+    
+<p>name </p>
+      <%=  r.text %>
+   <p>id </p>   
+        <%= r.id %>
+        <p>place </p>
+      <%= r.place %>
+
+ <p><%= link_to("+", {:action => 'contentadd', :id => @selected.id, :place => (r.place.to_i - 1)}) %></p>
+<p><%= link_to("up", {:action => 'contentup', :id => r.id, :head => @selected.id}) %></p>
+<p><%= link_to("dw", {:action => 'contentdown', :id => r.id, :head => @selected.id}) %></p>
+     <% end %>
+
+     <% end %>
+
+    <% end %>

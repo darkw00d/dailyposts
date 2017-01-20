@@ -4,9 +4,11 @@ class CreateHeadLines < ActiveRecord::Migration[5.0]
       t.timestamps null: false
 
 t.string "text", :limit => 200
-t.integer "score"
+t.integer "score",:default =>0
+t.integer "theme_id"
 
     end
+    add_index :head_lines, ["theme_id"]
 
 end
      def down
