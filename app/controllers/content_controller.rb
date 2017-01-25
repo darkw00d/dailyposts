@@ -22,8 +22,8 @@ z[0...2]=''
 h = z.length
 z[(h-2)...(h)]=''
 
-if Subject.where(:name=> z).empty?
-newsub = Subject.new(:name=> z)
+if Subject.where(:text => z).empty?
+newsub = Subject.new(:text=> z)
 newsub.save 
 
 newsub.head_lines << @head
@@ -38,8 +38,8 @@ subjects.each do |s|
 z[0...2]=''
 h = z.length
 z[(h-2)...(h)]=''
-if Theme.where(:name=> z).empty?
-newsub = Theme.new(:name=> z)
+if Theme.where(:text=> z).empty?
+newsub = Theme.new(:text=> z)
 newsub.save 
 
 newsub.head_lines << @head
@@ -55,6 +55,13 @@ def selecthead
 @selected = HeadLine.find(params[:id])
 #@headlines = @selected.contents.sorted
 @switch = "h"
+render 'selected'
+end
+
+def selecttheme
+@selected = Theme.find(params[:id])
+#@headlines = @selected.contents.sorted
+@switch = "t"
 render 'selected'
 end
 
@@ -104,6 +111,41 @@ def contentdown
 render 'selected'
 
 end
+
+
+def themeadd
+
+end
+
+def themeup
+ @content = HeadLine.find(params[:id])
+@content.score = @content.score + 1
+@content.save
+
+@content = Theme.find(params[:theme])
+@content.score = @content.score + 1
+@content.save
+
+@selected = Theme.find(params[:theme])
+@switch = "t"
+render 'selected'
+
+  end
+
+def themedown
+@content = HeadLine.find(params[:id])
+@content.score = @content.score - 1
+@content.save
+
+@content = Theme.find(params[:theme])
+@content.score = @content.score - 1
+@content.save
+
+@selected = Theme.find(params[:theme])
+@switch = "t"
+render 'selected'
+end
+
 
 
 def add

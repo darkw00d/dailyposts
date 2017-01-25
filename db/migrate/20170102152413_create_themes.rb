@@ -3,8 +3,8 @@ class CreateThemes < ActiveRecord::Migration[5.0]
     create_table :themes do |t|
       t.timestamps null: false
 
-t.string "name", :limit => 25
-t.integer "mentions"
+t.string "text", :limit => 25
+t.integer "score",:default =>0
 
     end
 

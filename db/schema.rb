@@ -55,15 +55,15 @@ ActiveRecord::Schema.define(version: 20170111203026) do
   create_table "subjects", force: :cascade do |t|
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
-    t.string   "name",       limit: 25
+    t.string   "text",       limit: 25
     t.integer  "score",                 default: 0
   end
 
   create_table "themes", force: :cascade do |t|
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
-    t.string   "name",       limit: 25
-    t.integer  "mentions"
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.string   "text",       limit: 25
+    t.integer  "score",                 default: 0
   end
 
 end

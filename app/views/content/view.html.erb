@@ -17,7 +17,7 @@
 <p>subjects </p>
 
         	 <% @subs.each do |r| %>
-     <td><%= link_to(r.name, {:action => 'selectsub', :id => r}) %> </td>
+     <td><%= link_to(r.text, {:action => 'selectsub', :id => r}) %> </td>
     
      
       <% end %>
@@ -26,7 +26,7 @@
 <p>themes </p>
 
            <% @theme.each do |r| %>
-     <td><%= link_to(r.name, {:action => 'selectsub', :id => r}) %> </td>
+     <td><%= link_to(r.text, {:action => 'selecttheme', :id => r}) %> </td>
     
      
       <% end %>

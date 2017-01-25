@@ -1,6 +1,9 @@
 <h1>Selected</h1>
 
 
+
+
+
 <% if @switch == "s" %>
  
 
@@ -42,4 +45,36 @@
 
      <% end %>
 
+     <%elsif @switch == "t" %>
+
+<p> theme </p>
+  <% if @selected.head_lines.empty? %>
+<p> empty </p>
+     <%= @selected.text %>
+ <%= link_to("+", {:action => 'themeadd', :id => @selected.id}) %> 
+
+
+   <% else %>
+
+     <%= @selected.text %>
+
+         <% @selected.head_lines.sorted.each do |r| %>
+    
+<p>name </p>
+      <%=  r.text %>
+   <p>id </p>   
+        <%= r.id %>
+ 
+
+ <p><%= link_to("+", {:action => 'themeadd', :id => @selected.id}) %></p>
+<p><%= link_to("up", {:action => 'themeup', :id => r.id, :theme => @selected.id}) %></p>
+<p><%= link_to("dw", {:action => 'themedown', :id => r.id, :theme => @selected.id}) %></p>
+     <% end %>
+
+     <% end %>
+
+
     <% end %>
+
+
+

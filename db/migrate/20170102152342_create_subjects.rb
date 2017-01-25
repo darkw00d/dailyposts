@@ -3,7 +3,7 @@ class CreateSubjects < ActiveRecord::Migration[5.0]
     create_table :subjects do |t|
       t.timestamps null: false
 
-t.string "name", :limit => 25
+t.string "text", :limit => 25
 t.integer "score" ,:default =>0
 
     end
