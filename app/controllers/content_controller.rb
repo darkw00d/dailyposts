@@ -9,30 +9,23 @@ class ContentController < ApplicationController
 
 def create
 
-
-
-
 @head = HeadLine.new(head_params)
     if @head.save
-     redirect_to(:controller => 'content', :action => 'view')
-     subjects = @head.text.scan(/@([a-z0-9_]+)/i)
+
+subjects = @head.text.scan(/@([a-z0-9_]+)/i)
 subjects.each do |s|
-	z = s.to_s
+z = s.to_s
 z[0...2]=''
 h = z.length
 z[(h-2)...(h)]=''
-
 if Subject.where(:text => z).empty?
 newsub = Subject.new(:text=> z)
 newsub.save 
-
-newsub.head_lines << @head
-
 else
 end
 end
 
- subjects = @head.text.scan(/#([a-z0-9_]+)/i)
+subjects = @head.text.scan(/#([a-z0-9_]+)/i)
 subjects.each do |s|
   z = s.to_s
 z[0...2]=''
@@ -46,21 +39,18 @@ newsub.head_lines << @head
 else
 end
 end
-
-       else
-  end
+     redirect_to(:controller => 'content', :action => 'view')
+end
 end
 
 def selecthead
 @selected = HeadLine.find(params[:id])
-#@headlines = @selected.contents.sorted
 @switch = "h"
 render 'selected'
 end
 
 def selecttheme
 @selected = Theme.find(params[:id])
-#@headlines = @selected.contents.sorted
 @switch = "t"
 render 'selected'
 end
@@ -68,19 +58,60 @@ end
 
 def selectsub
 @selected = Subject.find(params[:id])
-#@headlines = @selected.head_lines
 @switch = "s"
 render 'selected'
 end
 
 def contentadd
 @headlines = HeadLine.find(params[:id])
-
  @place = (params[:place])
-
 render 'add'
+end
+
+def add
+  @headlines = HeadLine.find(params[:headline])
+  @content = Content.new(content_params)
+  @content.place = (params[:place]).to_i
+  @content.save
+  @headlines.contents << @content
+
+    if @content.save
+  
+     subjects = @content.text.scan(/@([a-z0-9_]+)/i)
+subjects.each do |s|
+  z = s.to_s
+z[0...2]=''
+h = z.length
+z[(h-2)...(h)]=''
+
+if Subject.where(:text => z).empty?
+newsub = Subject.new(:text=> z)
+newsub.save 
+
+else
+end
+end
+
+subjects = @content.text.scan(/#([a-z0-9_]+)/i)
+subjects.each do |s|
+  z = s.to_s
+z[0...2]=''
+h = z.length
+z[(h-2)...(h)]=''
+if Theme.where(:text=> z).empty?
+newsub = Theme.new(:text=> z)
+newsub.save 
+
+
+else
+end
+end
+
+   redirect_to(:controller => 'content', :action => 'view')
 
 end
+end
+
 
 def contentup
 @content = HeadLine.find(params[:head])
@@ -114,8 +145,23 @@ end
 
 
 def themeadd
-
+@theme = Theme.find(params[:id])
+render 'addtheme'
 end
+
+def tadd
+  @theme = Theme.find(params[:theme])
+  @headline = HeadLine.new(head_params)
+  
+  @headline.save
+  @theme.head_lines << @headline
+  
+@selected = @headline
+@switch = "t"
+render 'selected'
+end
+
+
 
 def themeup
  @content = HeadLine.find(params[:id])
@@ -147,16 +193,60 @@ render 'selected'
 end
 
 
-
-def add
-  @headlines = HeadLine.find(params[:headline])
-  @content = Content.new(content_params)
-  @content.place = (params[:place]).to_i
-  @content.save
-  @headlines.contents << @content
-  
-   redirect_to(:controller => 'content', :action => 'view')
+def subjectadd
+@subject = Subject.find(params[:id])
+render 'addhead'
 end
+
+def sadd
+  @subject = Subject.find(params[:subject])
+  @headline = HeadLine.new(head_params)
+  
+  @headline.save
+  @subject.head_lines << @headline
+  @switch = "h"
+  @selected = @headline
+render 'selected'
+end
+
+
+
+def subjectup
+@content = Subject.find(params[:head])
+@selected = Subject.find(params[:head])
+@content.score = @content.score + 1
+@content.save
+
+@content = HeadLine.find(params[:id])
+@content.score = @content.score + 1
+@content.save
+
+
+@switch = "s"
+render 'selected'
+
+  end
+
+
+def subjectdown
+@content = Subject.find(params[:head])
+@selected = Subject.find(params[:head])
+@content.score = @content.score - 1
+@content.save
+
+@content = HeadLine.find(params[:id])
+@content.score = @content.score - 1
+@content.save
+
+
+@switch = "s"
+render 'selected'
+
+  end
+
+
+
+
 
 
 

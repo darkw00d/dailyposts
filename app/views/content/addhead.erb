@@ -1,0 +1,11 @@
+<h1>Add</h1>
+<p><%= @subject.text %></p>
+
+
+<%= form_for(:head_line, :url => {:action => 'sadd', :subject => @subject.id},:html =>{:multipart => true}) do |f| %>
+  <%= f.text_field(:text) %>
+     <div class="form-buttons">
+      <%= submit_tag('Create comment') %>
+    </div>
+
+  <% end %>

@@ -8,12 +8,33 @@
  
 
  <p> subject </p>
-  	 <%= @selected.name %>
+  	 <%= @selected.text %>
 
-  	   	 <% @headlines.each do |r| %>
-      <%= r.text %>
-  
+
+  <% if @selected.head_lines.empty? %>
+<p> empty </p>
+
+ <%= link_to("+", {:action => 'subjectadd', :id => @selected.id}) %> 
+
+
+   <% else %>
+
+     <%= @selected.text %>
+
+         <% @selected.head_lines.each do |r| %>
+    
+<p>name </p>
+      <%=  r.text %>
+   <p>id </p>   
+        <%= r.id %>
+
+ <p><%= link_to("+", {:action => 'subjectadd', :id => @selected.id}) %></p>
+<p><%= link_to("up", {:action => 'subjectup', :id => r.id, :head => @selected.id}) %></p>
+<p><%= link_to("dw", {:action => 'subjectdown', :id => r.id, :head => @selected.id}) %></p>
      <% end %>
+
+     <% end %>
+
 
 
      <%elsif @switch == "h" %>
