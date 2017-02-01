@@ -107,7 +107,10 @@ else
 end
 end
 
-   redirect_to(:controller => 'content', :action => 'view')
+#   redirect_to(:controller => 'content', :action => 'view')
+@selected = @headlines
+@switch = "h"
+render 'selected'
 
 end
 end
@@ -259,7 +262,7 @@ render 'selected'
     end
 
     def content_params
-      params.require(:content).permit(:text, :place)
+      params.require(:content).permit(:text, :place,:image)
     end
 
 end

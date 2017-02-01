@@ -15341,3 +15341,375 @@ Processing by ContentController#selecttheme as HTML
 Completed 200 OK in 123ms (Views: 134.0ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/content/selecthead/37" for ::1 at 2017-01-31 12:48:58 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Processing by ContentController#selecthead as HTML
+  Parameters: {"id"=>"37"}
+  [1m[36mHeadLine Load (0.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" WHERE "head_lines"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  Rendering content/selected.erb within layouts/application
+  [1m[36mContent Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "contents" WHERE "contents"."head_line_id" = $1 LIMIT $2[0m  [["head_line_id", 37], ["LIMIT", 1]]
+  Rendered content/selected.erb within layouts/application (22.1ms)
+Completed 200 OK in 203ms (Views: 176.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/content/contentadd/37?place=0" for ::1 at 2017-01-31 12:49:00 +0000
+Processing by ContentController#contentadd as HTML
+  Parameters: {"place"=>"0", "id"=>"37"}
+  [1m[36mHeadLine Load (0.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" WHERE "head_lines"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  Rendering content/add.erb within layouts/application
+  Rendered content/add.erb within layouts/application (4.0ms)
+Completed 200 OK in 138ms (Views: 135.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/content/add?headline=37&place=0" for ::1 at 2017-01-31 12:49:05 +0000
+Processing by ContentController#add as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zc8j94rZpZnc4zeOBzYbaBDx+MXgaUnZYonvi+im0VT8s1LDBM/g003jRnbI18Na98zszUFdXvYUdmVgwTsvvg==", "content"=>{"text"=>"test"}, "commit"=>"Create comment", "headline"=>"37", "place"=>"0"}
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" WHERE "head_lines"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  [1m[35m (4.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "contents" ("created_at", "updated_at", "text", "place") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", 2017-01-31 12:49:05 UTC], ["updated_at", 2017-01-31 12:49:05 UTC], ["text", "test"], ["place", 0]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[33mUPDATE "contents" SET "updated_at" = $1, "head_line_id" = $2 WHERE "contents"."id" = $3[0m  [["updated_at", 2017-01-31 12:49:05 UTC], ["head_line_id", 37], ["id", 6]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  Rendering content/selected.erb within layouts/application
+  [1m[36mContent Load (0.0ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."head_line_id" = $1 ORDER BY place DESC[0m  [["head_line_id", 37]]
+  Rendered content/selected.erb within layouts/application (12.0ms)
+Completed 200 OK in 229ms (Views: 188.8ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/content/contentup/6?head=37" for ::1 at 2017-01-31 12:49:14 +0000
+Processing by ContentController#contentup as HTML
+  Parameters: {"head"=>"37", "id"=>"6"}
+  [1m[36mHeadLine Load (4.1ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" WHERE "head_lines"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[33mUPDATE "head_lines" SET "score" = $1, "updated_at" = $2 WHERE "head_lines"."id" = $3[0m  [["score", 1], ["updated_at", 2017-01-31 12:49:14 UTC], ["id", 37]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mContent Load (0.0ms)[0m  [1m[34mSELECT  "contents".* FROM "contents" WHERE "contents"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[33mUPDATE "contents" SET "score" = $1, "updated_at" = $2 WHERE "contents"."id" = $3[0m  [["score", 1], ["updated_at", 2017-01-31 12:49:14 UTC], ["id", 6]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mHeadLine Load (0.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" WHERE "head_lines"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  Rendering content/selected.erb within layouts/application
+  [1m[36mContent Exists (4.0ms)[0m  [1m[34mSELECT  1 AS one FROM "contents" WHERE "contents"."head_line_id" = $1 LIMIT $2[0m  [["head_line_id", 37], ["LIMIT", 1]]
+  [1m[36mContent Load (0.0ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."head_line_id" = $1 ORDER BY place DESC[0m  [["head_line_id", 37]]
+  Rendered content/selected.erb within layouts/application (8.0ms)
+Completed 200 OK in 136ms (Views: 125.5ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/content/contentup/6?head=37" for ::1 at 2017-01-31 12:49:17 +0000
+Processing by ContentController#contentup as HTML
+  Parameters: {"head"=>"37", "id"=>"6"}
+  [1m[36mHeadLine Load (0.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" WHERE "head_lines"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[33mUPDATE "head_lines" SET "score" = $1, "updated_at" = $2 WHERE "head_lines"."id" = $3[0m  [["score", 2], ["updated_at", 2017-01-31 12:49:17 UTC], ["id", 37]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mContent Load (0.0ms)[0m  [1m[34mSELECT  "contents".* FROM "contents" WHERE "contents"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[33mUPDATE "contents" SET "score" = $1, "updated_at" = $2 WHERE "contents"."id" = $3[0m  [["score", 2], ["updated_at", 2017-01-31 12:49:17 UTC], ["id", 6]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mHeadLine Load (0.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" WHERE "head_lines"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  Rendering content/selected.erb within layouts/application
+  [1m[36mContent Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "contents" WHERE "contents"."head_line_id" = $1 LIMIT $2[0m  [["head_line_id", 37], ["LIMIT", 1]]
+  [1m[36mContent Load (0.0ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."head_line_id" = $1 ORDER BY place DESC[0m  [["head_line_id", 37]]
+  Rendered content/selected.erb within layouts/application (15.6ms)
+Completed 200 OK in 138ms (Views: 130.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/content/contentup/6?head=37" for ::1 at 2017-01-31 12:49:18 +0000
+Processing by ContentController#contentup as HTML
+  Parameters: {"head"=>"37", "id"=>"6"}
+  [1m[36mHeadLine Load (0.5ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" WHERE "head_lines"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[33mUPDATE "head_lines" SET "score" = $1, "updated_at" = $2 WHERE "head_lines"."id" = $3[0m  [["score", 3], ["updated_at", 2017-01-31 12:49:18 UTC], ["id", 37]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mContent Load (0.0ms)[0m  [1m[34mSELECT  "contents".* FROM "contents" WHERE "contents"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[33mUPDATE "contents" SET "score" = $1, "updated_at" = $2 WHERE "contents"."id" = $3[0m  [["score", 3], ["updated_at", 2017-01-31 12:49:18 UTC], ["id", 6]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mHeadLine Load (0.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" WHERE "head_lines"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  Rendering content/selected.erb within layouts/application
+  [1m[36mContent Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "contents" WHERE "contents"."head_line_id" = $1 LIMIT $2[0m  [["head_line_id", 37], ["LIMIT", 1]]
+  [1m[36mContent Load (0.0ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."head_line_id" = $1 ORDER BY place DESC[0m  [["head_line_id", 37]]
+  Rendered content/selected.erb within layouts/application (12.0ms)
+Completed 200 OK in 159ms (Views: 146.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/content/contentup/6?head=37" for ::1 at 2017-01-31 12:49:18 +0000
+Processing by ContentController#contentup as HTML
+  Parameters: {"head"=>"37", "id"=>"6"}
+  [1m[36mHeadLine Load (0.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" WHERE "head_lines"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[33mUPDATE "head_lines" SET "score" = $1, "updated_at" = $2 WHERE "head_lines"."id" = $3[0m  [["score", 4], ["updated_at", 2017-01-31 12:49:18 UTC], ["id", 37]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mContent Load (0.0ms)[0m  [1m[34mSELECT  "contents".* FROM "contents" WHERE "contents"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[33mUPDATE "contents" SET "score" = $1, "updated_at" = $2 WHERE "contents"."id" = $3[0m  [["score", 4], ["updated_at", 2017-01-31 12:49:18 UTC], ["id", 6]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mHeadLine Load (0.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" WHERE "head_lines"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  Rendering content/selected.erb within layouts/application
+  [1m[36mContent Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "contents" WHERE "contents"."head_line_id" = $1 LIMIT $2[0m  [["head_line_id", 37], ["LIMIT", 1]]
+  [1m[36mContent Load (0.0ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."head_line_id" = $1 ORDER BY place DESC[0m  [["head_line_id", 37]]
+  Rendered content/selected.erb within layouts/application (12.0ms)
+Completed 200 OK in 159ms (Views: 140.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/content/contentup/6?head=37" for ::1 at 2017-01-31 12:56:29 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Processing by ContentController#contentup as HTML
+  Parameters: {"head"=>"37", "id"=>"6"}
+  [1m[36mHeadLine Load (0.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" WHERE "head_lines"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[33mUPDATE "head_lines" SET "score" = $1, "updated_at" = $2 WHERE "head_lines"."id" = $3[0m  [["score", 5], ["updated_at", 2017-01-31 12:56:29 UTC], ["id", 37]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mContent Load (0.0ms)[0m  [1m[34mSELECT  "contents".* FROM "contents" WHERE "contents"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "contents" SET "score" = $1, "updated_at" = $2 WHERE "contents"."id" = $3[0m  [["score", 5], ["updated_at", 2017-01-31 12:56:29 UTC], ["id", 6]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mHeadLine Load (0.5ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" WHERE "head_lines"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  Rendering content/selected.erb within layouts/application
+  [1m[36mContent Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "contents" WHERE "contents"."head_line_id" = $1 LIMIT $2[0m  [["head_line_id", 37], ["LIMIT", 1]]
+  [1m[36mContent Load (0.5ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."head_line_id" = $1 ORDER BY place DESC[0m  [["head_line_id", 37]]
+  Rendered content/selected.erb within layouts/application (20.0ms)
+Completed 200 OK in 212ms (Views: 153.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/content/add?headline=37&place=0" for ::1 at 2017-01-31 12:56:34 +0000
+Processing by ContentController#add as HTML
+  Parameters: {"headline"=>"37", "place"=>"0"}
+  [1m[36mHeadLine Load (0.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" WHERE "head_lines"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+Completed 400 Bad Request in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: content):
+  
+app/controllers/content_controller.rb:265:in `content_params'
+app/controllers/content_controller.rb:73:in `add'
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (15.6ms)
+Started GET "/content/selecthead/37" for ::1 at 2017-01-31 12:56:37 +0000
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+Processing by ContentController#selecthead as HTML
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Parameters: {"id"=>"37"}
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (2481.9ms)
+  [1m[36mHeadLine Load (623.4ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" WHERE "head_lines"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+Started GET "/content/view" for ::1 at 2017-01-31 12:56:38 +0000
+Processing by ContentController#view as HTML
+  Rendering content/selected.erb within layouts/application
+  [1m[36mContent Exists (624.8ms)[0m  [1m[34mSELECT  1 AS one FROM "contents" WHERE "contents"."head_line_id" = $1 LIMIT $2[0m  [["head_line_id", 37], ["LIMIT", 1]]
+  [1m[36mContent Load (43.4ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."head_line_id" = $1 ORDER BY place DESC[0m  [["head_line_id", 37]]
+  Rendered content/selected.erb within layouts/application (669.6ms)
+Completed 200 OK in 5143ms (Views: 3851.3ms | ActiveRecord: 1291.6ms)
+
+
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (0.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (4.0ms)[0m  [1m[34mSELECT "themes".* FROM "themes" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (31.0ms)
+Completed 200 OK in 3525ms (Views: 143.5ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-01-31 12:56:43 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (0.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (4.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (0.0ms)[0m  [1m[34mSELECT "themes".* FROM "themes" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 180ms (Views: 145.3ms | ActiveRecord: 4.0ms)
+
+
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(751951996379702895);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (93.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddImageToContents (20170201072131)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (336.0ms)[0m  [1m[35mALTER TABLE "contents" ADD "image" character varying[0m
+  [1m[35mSQL (24.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170201072131"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (34.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(751951996379702895)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Started GET "/" for ::1 at 2017-02-01 07:36:54 +0000
+Started GET "/" for ::1 at 2017-02-01 07:36:54 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ContentController#view as HTML
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (2.7ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mHeadLine Load (5.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (29.2ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (38.4ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (28.2ms)[0m  [1m[34mSELECT "themes".* FROM "themes" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (27.7ms)[0m  [1m[34mSELECT "themes".* FROM "themes" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (310.7ms)
+  Rendered content/view.html.erb within layouts/application (305.6ms)
+Completed 500 Internal Server Error in 1220ms (ActiveRecord: 93.4ms)
+
+
+  
+ActionView::Template::Error (Permission denied @ utime_failed - c:/sites/dailypost/tmp/cache/assets/sprockets/v3.0/0f/0f0xy_jSdC5oCIL33-EkOwfuJSgOyHcJXZkpf5aFnX0.cache):
+    4:     <title>Dailypost</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__669749508_44859756'
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.0ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.5ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (2032.2ms)
+Completed 200 OK in 9804ms (Views: 9524.7ms | ActiveRecord: 78.4ms)
+
+
+Started GET "/" for ::1 at 2017-02-01 07:40:03 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.5ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (1.5ms)[0m  [1m[34mSELECT "themes".* FROM "themes" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (24.8ms)
+Completed 200 OK in 174ms (Views: 142.5ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/content/selecthead/34" for ::1 at 2017-02-01 07:40:12 +0000
+Processing by ContentController#selecthead as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mHeadLine Load (0.5ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" WHERE "head_lines"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  Rendering content/selected.erb within layouts/application
+  Rendered content/selected.erb within layouts/application (157.8ms)
+Completed 500 Internal Server Error in 283ms (ActiveRecord: 7.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `attr_accessible' for #<Class:0xbfaf960>):
+    40:      <%elsif @switch == "h" %>
+    41: <p> head </p>
+    42:    
+    43:    	<% if @selected.contents.empty? %>
+    44: <p> empty </p>
+    45:    	 <%= @selected.text %>
+    46:  <%= link_to("+", {:action => 'contentadd', :id => @selected.id, :place => 0}) %> 
+  
+app/models/content.rb:7:in `<class:Content>'
+app/models/content.rb:1:in `<top (required)>'
+app/views/content/selected.erb:43:in `_app_views_content_selected_erb__185115_94841376'
+app/controllers/content_controller.rb:49:in `selecthead'
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.5ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.5ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (2027.7ms)
+Started GET "/" for ::1 at 2017-02-01 07:41:26 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (0.5ms)[0m  [1m[34mSELECT "themes".* FROM "themes" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (35.7ms)
+Completed 200 OK in 216ms (Views: 167.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/content/selecthead/9" for ::1 at 2017-02-01 07:41:39 +0000
+Processing by ContentController#selecthead as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mHeadLine Load (0.5ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" WHERE "head_lines"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering content/selected.erb within layouts/application
+  [1m[36mContent Exists (3.4ms)[0m  [1m[34mSELECT  1 AS one FROM "contents" WHERE "contents"."head_line_id" = $1 LIMIT $2[0m  [["head_line_id", 9], ["LIMIT", 1]]
+  Rendered content/selected.erb within layouts/application (172.8ms)
+Completed 200 OK in 290ms (Views: 282.0ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/content/contentadd/9?place=0" for ::1 at 2017-02-01 07:41:42 +0000
+Processing by ContentController#contentadd as HTML
+  Parameters: {"place"=>"0", "id"=>"9"}
+  [1m[36mHeadLine Load (0.5ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" WHERE "head_lines"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering content/add.erb within layouts/application
+  Rendered content/add.erb within layouts/application (40.8ms)
+Completed 200 OK in 164ms (Views: 159.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/content/contentadd/9?place=0" for ::1 at 2017-02-01 07:42:22 +0000
+Processing by ContentController#contentadd as HTML
+  Parameters: {"place"=>"0", "id"=>"9"}
+  [1m[36mHeadLine Load (1.5ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" WHERE "head_lines"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering content/add.erb within layouts/application
+  Rendered content/add.erb within layouts/application (5.0ms)
+Completed 200 OK in 151ms (Views: 145.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/content/contentadd/9?place=0" for ::1 at 2017-02-01 07:44:09 +0000
+Processing by ContentController#contentadd as HTML
+  Parameters: {"place"=>"0", "id"=>"9"}
+  [1m[36mHeadLine Load (1.5ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" WHERE "head_lines"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering content/add.erb within layouts/application
+  Rendered content/add.erb within layouts/application (3.0ms)
+Completed 200 OK in 144ms (Views: 138.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/content/contentadd/9?place=0" for ::1 at 2017-02-01 07:44:11 +0000
+Processing by ContentController#contentadd as HTML
+  Parameters: {"place"=>"0", "id"=>"9"}
+  [1m[36mHeadLine Load (0.5ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" WHERE "head_lines"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering content/add.erb within layouts/application
+  Rendered content/add.erb within layouts/application (2.5ms)
+Completed 200 OK in 137ms (Views: 132.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/content/contentadd/9?place=0" for ::1 at 2017-02-01 07:44:57 +0000
+Processing by ContentController#contentadd as HTML
+  Parameters: {"place"=>"0", "id"=>"9"}
+  [1m[36mHeadLine Load (0.5ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" WHERE "head_lines"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering content/add.erb within layouts/application
+  Rendered content/add.erb within layouts/application (3.0ms)
+Completed 200 OK in 156ms (Views: 151.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/content/contentadd/9?place=0" for ::1 at 2017-02-01 07:44:59 +0000
+Processing by ContentController#contentadd as HTML
+  Parameters: {"place"=>"0", "id"=>"9"}
+  [1m[36mHeadLine Load (0.5ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" WHERE "head_lines"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering content/add.erb within layouts/application
+  Rendered content/add.erb within layouts/application (3.0ms)
+Completed 200 OK in 147ms (Views: 143.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/content/contentadd/9?place=0" for ::1 at 2017-02-01 07:46:00 +0000
+Processing by ContentController#contentadd as HTML
+  Parameters: {"place"=>"0", "id"=>"9"}
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" WHERE "head_lines"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering content/add.erb within layouts/application
+  Rendered content/add.erb within layouts/application (166.3ms)
+Completed 200 OK in 299ms (Views: 295.4ms | ActiveRecord: 1.0ms)
+
+
