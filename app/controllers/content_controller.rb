@@ -258,11 +258,11 @@ render 'selected'
 
     def head_params
 
-      params.require(:head_line).permit(:text)
+      params.require(:head_line).permit(:text, :image, :remote_image_url)
     end
 
     def content_params
-      params.require(:content).permit(:text, :place,:image)
+      params.require(:content).permit(:text, :place,:image, :remote_image_url)
     end
 
 end

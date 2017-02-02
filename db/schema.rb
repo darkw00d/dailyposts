@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170201072131) do
+ActiveRecord::Schema.define(version: 20170202073755) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20170201072131) do
     t.string   "text",       limit: 200
     t.integer  "score",                  default: 0
     t.integer  "theme_id"
+    t.string   "image"
     t.index ["theme_id"], name: "index_head_lines_on_theme_id", using: :btree
   end
 
@@ -58,6 +59,7 @@ ActiveRecord::Schema.define(version: 20170201072131) do
     t.datetime "updated_at",                        null: false
     t.string   "text",       limit: 25
     t.integer  "score",                 default: 0
+    t.string   "image"
   end
 
   create_table "themes", force: :cascade do |t|

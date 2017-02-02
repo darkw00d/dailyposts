@@ -15713,3 +15713,275 @@ Processing by ContentController#contentadd as HTML
 Completed 200 OK in 299ms (Views: 295.4ms | ActiveRecord: 1.0ms)
 
 
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(751951996379702895);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (7.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddImageToSubjects (20170202072734)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (26.5ms)[0m  [1m[35mALTER TABLE "subjects" ADD "image" character varying[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170202072734"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(751951996379702895)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(751951996379702895);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddImageToHeadLines (20170202073755)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (13.0ms)[0m  [1m[35mALTER TABLE "head_lines" ADD "image" character varying[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170202073755"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(751951996379702895)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Started GET "/" for ::1 at 2017-02-02 07:41:44 +0000
+Started GET "/" for ::1 at 2017-02-02 07:41:44 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (3.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ContentController#view as HTML
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (4.6ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mHeadLine Load (5.2ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (7.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (3.6ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (1.5ms)[0m  [1m[34mSELECT "themes".* FROM "themes" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (1.0ms)[0m  [1m[34mSELECT "themes".* FROM "themes" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (184.9ms)
+  Rendered content/view.html.erb within layouts/application (191.5ms)
+Completed 500 Internal Server Error in 1103ms (ActiveRecord: 35.7ms)
+
+
+  
+ActionView::Template::Error (Permission denied @ utime_failed - c:/sites/dailypost/tmp/cache/assets/sprockets/v3.0/qP/qPmv5snMrDw830S6hSICDcnIy7kVEWoFKXhGKT38lG4.cache):
+    4:     <title>Dailypost</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__277976350_47418612'
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (11.5ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.5ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (2040.0ms)
+Completed 200 OK in 8954ms (Views: 8716.5ms | ActiveRecord: 33.3ms)
+
+
+Started POST "/content/create" for ::1 at 2017-02-02 07:42:43 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fest69JvovuBi8dYL0Ns8hQOKDt94JRlb52+knGcH/dpZAKoPa4Pzj84ddzNn8qyX2Z/u9Lf91BalQA/CMsecg==", "head_line"=>{"text"=>"papapa"}, "commit"=>"Create comment"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (19.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-02-02 07:42:43 UTC], ["updated_at", 2017-02-02 07:42:43 UTC], ["text", "papapa"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 36ms (ActiveRecord: 20.5ms)
+
+
+Started GET "/content/view" for ::1 at 2017-02-02 07:42:43 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (1.5ms)[0m  [1m[34mSELECT "themes".* FROM "themes" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (24.5ms)
+Completed 200 OK in 168ms (Views: 137.1ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/content/create" for ::1 at 2017-02-02 07:42:50 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"glfiVx40JVhapSJWdvfk8PPd/BSaO2mLZsfMUKODgHyW2M0U8fWIbeQWkNKUK0KwuLWrlDUECr5Tz3L92tSB+Q==", "head_line"=>{"text"=>"@papa"}, "commit"=>"Create comment"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-02-02 07:42:50 UTC], ["updated_at", 2017-02-02 07:42:50 UTC], ["text", "@papa"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects" WHERE "subjects"."text" = $1[0m  [["text", "papa"]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (26.8ms)[0m  [1m[32mINSERT INTO "subjects" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-02-02 07:42:50 UTC], ["updated_at", 2017-02-02 07:42:50 UTC], ["text", "papa"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 51ms (ActiveRecord: 29.8ms)
+
+
+Started GET "/content/view" for ::1 at 2017-02-02 07:42:50 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (0.5ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (1.0ms)[0m  [1m[34mSELECT "themes".* FROM "themes" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (25.9ms)
+Completed 200 OK in 185ms (Views: 151.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/content/view" for ::1 at 2017-02-02 07:43:16 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (0.5ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (0.5ms)[0m  [1m[34mSELECT "themes".* FROM "themes" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (53.2ms)
+Completed 200 OK in 213ms (Views: 178.8ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/content/create" for ::1 at 2017-02-02 07:43:53 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"43INxhzmkG5N796i3uWOJNGtBHYoXSlaGwfbkzgt4fH3/SKF8yc9W/NcbCY8OShkmsVT9odiSm8uD2U+QXrgdA==", "head_line"=>{"text"=>"great", "remote_image_url"=>"http://www.villagepiemaker.com/images/pie-icon.png"}, "commit"=>"Create comment"}
+Unpermitted parameter: remote_image_url
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-02-02 07:43:53 UTC], ["updated_at", 2017-02-02 07:43:53 UTC], ["text", "great"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 14ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-02-02 07:43:53 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (1.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (0.5ms)[0m  [1m[34mSELECT "themes".* FROM "themes" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (24.5ms)
+Completed 200 OK in 168ms (Views: 136.9ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/content/create" for ::1 at 2017-02-02 07:45:26 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1n2PpFR5xhakewesTqW4Uh+QnPijEFrM0aD4SX6t+OvC8qDnu7hrIxrItSiseR4SVPjLeAwvOfnkqEbkB/r5bg==", "head_line"=>{"text"=>"jj", "image"=>#<ActionDispatch::Http::UploadedFile:0xb0391a8 @tempfile=#<Tempfile:C:/Users/rich/AppData/Local/Temp/RackMultipart20170202-3324-1yj4m53.jpg>, @original_filename="n36701566_30510554_5655.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"head_line[image]\"; filename=\"n36701566_30510554_5655.jpg\"\r\nContent-Type: image/jpeg\r\n">, "remote_image_url"=>""}, "commit"=>"Create comment"}
+Unpermitted parameters: image, remote_image_url
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-02-02 07:45:26 UTC], ["updated_at", 2017-02-02 07:45:26 UTC], ["text", "jj"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 13ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/content/view" for ::1 at 2017-02-02 07:45:26 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (1.0ms)[0m  [1m[34mSELECT "themes".* FROM "themes" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 171ms (Views: 139.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-02-02 07:46:09 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (0.5ms)[0m  [1m[34mSELECT "themes".* FROM "themes" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (57.1ms)
+Completed 200 OK in 290ms (Views: 203.0ms | ActiveRecord: 16.5ms)
+
+
+Started POST "/content/create" for ::1 at 2017-02-02 07:46:56 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uQo0N4V+j6HCcK8OO4IWvFdhlsbuHxM8XgfTLxnukP+thRt0ar8ilHzDHYrZXrD8HAnBRkEgcAlrD22CYLmReg==", "head_line"=>{"text"=>"hi", "image"=>#<ActionDispatch::Http::UploadedFile:0xc3d9230 @tempfile=#<Tempfile:C:/Users/rich/AppData/Local/Temp/RackMultipart20170202-3324-sxyyf7.jpg>, @original_filename="n36701566_30510554_5655.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"head_line[image]\"; filename=\"n36701566_30510554_5655.jpg\"\r\nContent-Type: image/jpeg\r\n">, "remote_image_url"=>""}, "commit"=>"Create comment"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text", "image") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", 2017-02-02 07:46:56 UTC], ["updated_at", 2017-02-02 07:46:56 UTC], ["text", "hi"], ["image", "n36701566_30510554_5655.jpg"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 56ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/content/view" for ::1 at 2017-02-02 07:46:56 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.5ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (0.5ms)[0m  [1m[34mSELECT "themes".* FROM "themes" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (51.2ms)
+Completed 200 OK in 212ms (Views: 159.9ms | ActiveRecord: 10.9ms)
+
+
+Started POST "/content/create" for ::1 at 2017-02-02 07:47:40 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2X9HHbS251eBihHJRclsVQYuSs5eaYORqTNqkXY7ZfHN8GheW3dKYj85o02nFcoVTUYdTvFW4KScO9Q8D2xkdA==", "head_line"=>{"text"=>"juice", "remote_image_url"=>"http://www.villagepiemaker.com/images/pie-icon.png"}, "commit"=>"Create comment"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text", "image") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", 2017-02-02 07:47:41 UTC], ["updated_at", 2017-02-02 07:47:41 UTC], ["text", "juice"], ["image", "pie-icon.png"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 858ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/content/view" for ::1 at 2017-02-02 07:47:41 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (0.5ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.8ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (1.0ms)[0m  [1m[34mSELECT "themes".* FROM "themes" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (24.4ms)
+Completed 200 OK in 180ms (Views: 149.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/content/selecthead/24" for ::1 at 2017-02-02 07:48:28 +0000
+Processing by ContentController#selecthead as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mHeadLine Load (0.5ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" WHERE "head_lines"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  Rendering content/selected.erb within layouts/application
+  [1m[36mContent Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "contents" WHERE "contents"."head_line_id" = $1 LIMIT $2[0m  [["head_line_id", 24], ["LIMIT", 1]]
+  Rendered content/selected.erb within layouts/application (67.4ms)
+Completed 200 OK in 203ms (Views: 189.8ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/content/contentadd/24?place=0" for ::1 at 2017-02-02 07:48:31 +0000
+Processing by ContentController#contentadd as HTML
+  Parameters: {"place"=>"0", "id"=>"24"}
+  [1m[36mHeadLine Load (0.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" WHERE "head_lines"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  Rendering content/add.erb within layouts/application
+  Rendered content/add.erb within layouts/application (2.5ms)
+Completed 200 OK in 129ms (Views: 126.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/content/add?headline=24&place=0" for ::1 at 2017-02-02 07:48:57 +0000
+Processing by ContentController#add as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S5ZNnQcxbAxKSIbk82RDrNtjigncYKfiNynUQHE0t9ZKy/LJTp/S/O32Q/WbVnVDaLDX+bikOWLQlaDBjiISLw==", "content"=>{"text"=>"next", "image"=>#<ActionDispatch::Http::UploadedFile:0xb261c28 @tempfile=#<Tempfile:C:/Users/rich/AppData/Local/Temp/RackMultipart20170202-3324-wjqnmi.jpg>, @original_filename="n36701566_30511001_8180.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"content[image]\"; filename=\"n36701566_30511001_8180.jpg\"\r\nContent-Type: image/jpeg\r\n">, "remote_image_url"=>""}, "commit"=>"Create comment", "headline"=>"24", "place"=>"0"}
+  [1m[36mHeadLine Load (0.5ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" WHERE "head_lines"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (104.1ms)[0m  [1m[32mINSERT INTO "contents" ("created_at", "updated_at", "text", "place", "image") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", 2017-02-02 07:48:57 UTC], ["updated_at", 2017-02-02 07:48:57 UTC], ["text", "next"], ["place", 0], ["image", "n36701566_30511001_8180.jpg"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[33mUPDATE "contents" SET "updated_at" = $1, "head_line_id" = $2 WHERE "contents"."id" = $3[0m  [["updated_at", 2017-02-02 07:48:58 UTC], ["head_line_id", 24], ["id", 7]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  Rendering content/selected.erb within layouts/application
+  [1m[36mContent Load (1.0ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."head_line_id" = $1 ORDER BY place DESC[0m  [["head_line_id", 24]]
+  Rendered content/selected.erb within layouts/application (5.5ms)
+Completed 200 OK in 322ms (Views: 124.1ms | ActiveRecord: 111.2ms)
+
+
+Started GET "/" for ::1 at 2017-02-02 07:50:58 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (0.0ms)[0m  [1m[34mSELECT "themes".* FROM "themes" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (21.5ms)
+Completed 200 OK in 181ms (Views: 148.7ms | ActiveRecord: 1.5ms)
+
+

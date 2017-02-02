@@ -1,8 +1,19 @@
 <h1>Main page</h1>
 
 
+
 <%= form_for(:head_line, :url => {:action => 'create'},:html =>{:multipart => true}) do |f| %>
-  <%= f.text_field(:text) %>
+ <p>
+    <%= f.label :text %><br />
+    <%= f.text_field :text %>
+  </p>
+  <p>
+    <%= f.file_field :image %>
+  </p>
+  <p>
+    <%= f.label :remote_image_url, "or image URL" %><br />
+    <%= f.text_field :remote_image_url %>
+  </p>
      <div class="form-buttons">
       <%= submit_tag('Create comment') %>
     </div>
@@ -11,6 +22,7 @@
 
   	 <% @top.each do |r| %>
    
+   <%= image_tag r.image_url if r.image? %>
         <td><%= link_to(r.text, {:action => 'selecthead', :id => r}) %> </td> 
       <% end %>
 
