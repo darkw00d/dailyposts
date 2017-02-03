@@ -1,0 +1,22 @@
+<h1>Users#edit</h1>
+<p>Find me in app/views/users/edit.html.erb</p>
+
+ <table>
+    <tr>
+      <th>Username</th>
+      <th>Name</th>
+      <th>Email</th>
+     
+    </tr>
+    <% @users.each do |r| %>
+  
+      <td><%= r.username %></td>
+      <td><%= r.first_name %></td>
+      <td><%= image_tag r.avatar.url(:thumb) %></td>
+
+      <% r.comments.each do |t| %>
+      <td><%= t.content %></td>
+      
+      <% end %>
+    <% end %>
+  </table>

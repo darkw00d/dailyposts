@@ -1,0 +1,32 @@
+<h1>Users#signup</h1>
+<p>Find me in app/views/users/signup.html.erb</p>
+
+
+  <%= form_for(:users, :url => {:action => 'creatu'}, :html =>{ :multipart => true} ) do |f| %>
+
+ 
+  <tr>
+
+    <th><%= f.label(:email) %></th>
+    <td><%= f.text_field(:email) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:username) %></th>
+    <td><%= f.text_field(:username) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:password) %></th>
+    <td><%= f.password_field(:password) %></td>
+
+
+  </tr>
+</table>
+
+
+    <div class="form-buttons">
+      <%= f.submit 'Create User', :class => "button" %>
+    </div>
+
+  <% end %>
+</div>
+

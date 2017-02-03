@@ -248,13 +248,54 @@ render 'selected'
   end
 
 
+def signup
+       @users = User.new
+  end
+
+  def creatu
+    @users = User.new(user_params)
+    if @users.save
+      flash[:notice] = 'Admin user created.'
+      redirect_to(:action => 'view')
+    else
+      render("signup")
+    end
+  end
 
 
+  def edit
+      @users = User.sorted
+
+  end
+
+def attempt_login
+if params[:username].present? && params[:password].present?
+
+  found_user = User.where(:username => params[:username]).first
+  
+if found_user
+ authorised_user = found_user.authenticate(params[:password])
+
+end
+end
+if authorised_user
+  session[:username] = found_user.username
+   session[:id] = found_user.id
+ redirect_to(:action => 'landing')
+
+else 
+   session[:username] = nil
+ redirect_to(:action => 'signup')
+
+end
+end
 
 
+private
 
-
-
+  def user_params
+    params.require(:users).permit(:first_name, :last_name, :email, :username, :password)
+  end
 
     def head_params
 

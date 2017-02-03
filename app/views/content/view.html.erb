@@ -1,5 +1,11 @@
 <h1>Main page</h1>
 
+<%= flash[:notice] %>
+<%= session[:username] %>
+<%= session[:id] %>
+
+<%= link_to("Sign up", {:action => 'signup'},:class => 'buttons') %>
+<%= link_to("Login", {:action => 'login'},:class => 'login-button') %>
 
 
 <%= form_for(:head_line, :url => {:action => 'create'},:html =>{:multipart => true}) do |f| %>
@@ -42,3 +48,5 @@
     
      
       <% end %>
+
+
