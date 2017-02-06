@@ -8,10 +8,12 @@ t.integer "score", :default =>0
 t.integer "place"
 t.integer "head_line_id"
 t.integer "theme_id"
+t.integer "users_id"   
     end
 
 add_index :contents, ["head_line_id"]
 add_index :contents, ["theme_id"]
+add_index :contents, ["users_id"]
 end
      def down
     drop_table :contents do |t|

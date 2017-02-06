@@ -23,9 +23,11 @@ ActiveRecord::Schema.define(version: 20170203072835) do
     t.integer  "place"
     t.integer  "head_line_id"
     t.integer  "theme_id"
+    t.integer  "users_id"
     t.string   "image"
     t.index ["head_line_id"], name: "index_contents_on_head_line_id", using: :btree
     t.index ["theme_id"], name: "index_contents_on_theme_id", using: :btree
+    t.index ["users_id"], name: "index_contents_on_users_id", using: :btree
   end
 
   create_table "editors", force: :cascade do |t|
@@ -44,8 +46,10 @@ ActiveRecord::Schema.define(version: 20170203072835) do
     t.string   "text",       limit: 200
     t.integer  "score",                  default: 0
     t.integer  "theme_id"
+    t.integer  "users_id"
     t.string   "image"
     t.index ["theme_id"], name: "index_head_lines_on_theme_id", using: :btree
+    t.index ["users_id"], name: "index_head_lines_on_users_id", using: :btree
   end
 
   create_table "head_lines_subjects", id: false, force: :cascade do |t|
@@ -70,13 +74,14 @@ ActiveRecord::Schema.define(version: 20170203072835) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "first_name",      limit: 15
-    t.string   "last_name",       limit: 15
-    t.string   "email",           limit: 25
-    t.string   "username",        limit: 15
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.string   "password_digest"
+    t.string   "first_name", limit: 15
+    t.string   "last_name",  limit: 15
+    t.string   "email",      limit: 25
+    t.integer  "score",                 default: 0
+    t.string   "username",   limit: 15
+    t.string   "password",   limit: 15
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
   end
 
 end

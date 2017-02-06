@@ -16267,3 +16267,1120 @@ Processing by ContentController#view as HTML
 Completed 200 OK in 140ms (Views: 114.2ms | ActiveRecord: 3.0ms)
 
 
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Started GET "/" for ::1 at 2017-02-06 07:13:49 +0000
+Started GET "/" for ::1 at 2017-02-06 07:13:50 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (3.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ContentController#view as HTML
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (14.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mHeadLine Load (15.1ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (4.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (3.8ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (3.0ms)[0m  [1m[34mSELECT "themes".* FROM "themes" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (3.1ms)[0m  [1m[34mSELECT "themes".* FROM "themes" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (390.3ms)
+  Rendered content/view.html.erb within layouts/application (398.6ms)
+Completed 500 Internal Server Error in 1266ms (ActiveRecord: 30.0ms)
+
+
+  
+ActionView::Template::Error (Permission denied @ utime_failed - c:/sites/dailypost/tmp/cache/assets/sprockets/v3.0/0f/0f0xy_jSdC5oCIL33-EkOwfuJSgOyHcJXZkpf5aFnX0.cache):
+    4:     <title>Dailypost</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__891726927_48396360'
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (11.5ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.0ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1814.1ms)
+Completed 200 OK in 8395ms (Views: 8155.9ms | ActiveRecord: 32.8ms)
+
+
+Started GET "/content/login" for ::1 at 2017-02-06 07:14:06 +0000
+Processing by ContentController#login as HTML
+  Rendering content/login.html.erb within layouts/application
+  Rendered content/login.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 178ms (Views: 153.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/content/signup" for ::1 at 2017-02-06 07:14:10 +0000
+Processing by ContentController#signup as HTML
+  Rendering content/signup.html.erb within layouts/application
+  Rendered content/signup.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 366ms (Views: 152.5ms | ActiveRecord: 15.6ms)
+
+
+Started POST "/content/creatu" for ::1 at 2017-02-06 07:14:17 +0000
+Processing by ContentController#creatu as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5yoJSWhc8AIKfRgjHo0Ozp85PASIXJSXIqiiweFvlP9rwF2BLRzpEPnk80hoGxwZgeKDPm7jW4+1ozJx9jhsxg==", "users"=>{"email"=>"n", "username"=>"n", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "username", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "n"], ["username", "n"], ["created_at", 2017-02-06 07:14:17 UTC], ["updated_at", 2017-02-06 07:14:17 UTC], ["password_digest", "$2a$10$WgfCYSWEm6bJoDfkpzMKPOMZih0hzqwXWfS8DvJWGbQJOpf6diwoa"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 152ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-02-06 07:14:17 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (2.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (1.0ms)[0m  [1m[34mSELECT "themes".* FROM "themes" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 162ms (Views: 132.2ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/content/login" for ::1 at 2017-02-06 07:14:23 +0000
+Processing by ContentController#login as HTML
+  Rendering content/login.html.erb within layouts/application
+  Rendered content/login.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 169ms (Views: 138.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/content/attempt_login" for ::1 at 2017-02-06 07:14:28 +0000
+Processing by ContentController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+iCDD6J9wWLAocFy3WBF+1lIyratKdBNgCjpjhiCtRCmP3KDqg32XCiADkFBAVtchFAatmiWjLtCVbv5uX+F3A==", "username"=>"n", "password"=>"[FILTERED]", "commit"=>"login"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["username", "n"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/content/landing
+Completed 302 Found in 107ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/content/landing" for ::1 at 2017-02-06 07:14:28 +0000
+  
+AbstractController::ActionNotFound (The action 'landing' could not be found for ContentController):
+  
+actionpack (5.0.1) lib/abstract_controller/base.rb:121:in `process'
+actionview (5.0.1) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.1) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.1) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.5ms)
+Started POST "/content/attempt_login" for ::1 at 2017-02-06 07:15:34 +0000
+Processing by ContentController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xILvEzzHp6ALthTvCguIGQeSnWgKp49ffH9XEo7ZOiAD6Q4633JvWZyyMQSH1ShTEthkdcnjRsZou3VFWjaqBA==", "username"=>"n", "password"=>"[FILTERED]", "commit"=>"login"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["username", "n"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/content/landing
+Completed 302 Found in 102ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/content/landing" for ::1 at 2017-02-06 07:15:35 +0000
+  
+AbstractController::ActionNotFound (The action 'landing' could not be found for ContentController):
+  
+actionpack (5.0.1) lib/abstract_controller/base.rb:121:in `process'
+actionview (5.0.1) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.1) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.1) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (1.0ms)
+Started POST "/content/attempt_login" for ::1 at 2017-02-06 07:16:11 +0000
+Processing by ContentController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xILvEzzHp6ALthTvCguIGQeSnWgKp49ffH9XEo7ZOiAD6Q4633JvWZyyMQSH1ShTEthkdcnjRsZou3VFWjaqBA==", "username"=>"n", "password"=>"[FILTERED]", "commit"=>"login"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["username", "n"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/content/landing
+Completed 302 Found in 100ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/content/landing" for ::1 at 2017-02-06 07:16:12 +0000
+  
+AbstractController::ActionNotFound (The action 'landing' could not be found for ContentController):
+  
+actionpack (5.0.1) lib/abstract_controller/base.rb:121:in `process'
+actionview (5.0.1) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.1) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.1) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.0ms)
+Started POST "/content/attempt_login" for ::1 at 2017-02-06 07:18:42 +0000
+Processing by ContentController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xILvEzzHp6ALthTvCguIGQeSnWgKp49ffH9XEo7ZOiAD6Q4633JvWZyyMQSH1ShTEthkdcnjRsZou3VFWjaqBA==", "username"=>"n", "password"=>"[FILTERED]", "commit"=>"login"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["username", "n"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/content/landing
+Completed 302 Found in 108ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/content/landing" for ::1 at 2017-02-06 07:18:42 +0000
+  
+AbstractController::ActionNotFound (The action 'landing' could not be found for ContentController):
+  
+actionpack (5.0.1) lib/abstract_controller/base.rb:121:in `process'
+actionview (5.0.1) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.1) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.1) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (1.0ms)
+Started GET "/content/view" for ::1 at 2017-02-06 07:19:17 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (0.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (1.0ms)[0m  [1m[34mSELECT "themes".* FROM "themes" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 146ms (Views: 120.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/content/signup" for ::1 at 2017-02-06 07:19:26 +0000
+Processing by ContentController#signup as HTML
+  Rendering content/signup.html.erb within layouts/application
+  Rendered content/signup.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 123ms (Views: 101.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/content/creatu" for ::1 at 2017-02-06 07:19:33 +0000
+Processing by ContentController#creatu as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LPTkrmqOI4cn8/SQsWobvfuOGtT2POZdF8dSAvjqu8KgHrBmL846ldRqH/vH/Alq5VWl7hCDKUWAzMKy771D+w==", "users"=>{"email"=>"p", "username"=>"p", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "username", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "p"], ["username", "p"], ["created_at", 2017-02-06 07:19:33 UTC], ["updated_at", 2017-02-06 07:19:33 UTC], ["password_digest", "$2a$10$PFCXtjhc14ipeAurCNuex.pEI48fO947D0zJEdEYFOc/HRglpDGW6"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 113ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-02-06 07:19:33 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (0.5ms)[0m  [1m[34mSELECT "themes".* FROM "themes" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 179ms (Views: 153.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/content/login" for ::1 at 2017-02-06 07:19:37 +0000
+Processing by ContentController#login as HTML
+  Rendering content/login.html.erb within layouts/application
+  Rendered content/login.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 138ms (Views: 114.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/content/attempt_login" for ::1 at 2017-02-06 07:19:42 +0000
+Processing by ContentController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e4FZIB9xICheccIgbT3B7slWhDb98udrpI9osKlp5rAnnqisFwEXFrZQDRPxXN9JFE5UNjhNu51m8jrHCJTWfA==", "username"=>"p", "password"=>"[FILTERED]", "commit"=>"login"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["username", "p"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/content/landing
+Completed 302 Found in 100ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/landing" for ::1 at 2017-02-06 07:19:42 +0000
+  
+AbstractController::ActionNotFound (The action 'landing' could not be found for ContentController):
+  
+actionpack (5.0.1) lib/abstract_controller/base.rb:121:in `process'
+actionview (5.0.1) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.1) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.1) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (1.0ms)
+Started POST "/content/attempt_login" for ::1 at 2017-02-06 07:21:07 +0000
+Processing by ContentController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7GhiP3EymRjmqGKl3VwW0pAuvDhgEeYCIxmqdDL6QssrA4MWkodR4XGsR05QgraYhWRFJaNVL5s33Ygj5hXS7w==", "username"=>"p", "password"=>"[FILTERED]", "commit"=>"login"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["username", "p"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/content/landing
+Completed 302 Found in 98ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/content/landing" for ::1 at 2017-02-06 07:21:07 +0000
+  
+AbstractController::ActionNotFound (The action 'landing' could not be found for ContentController):
+  
+actionpack (5.0.1) lib/abstract_controller/base.rb:121:in `process'
+actionview (5.0.1) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.1) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.1) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (1.0ms)
+Started POST "/content/attempt_login" for ::1 at 2017-02-06 07:21:54 +0000
+Processing by ContentController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7GhiP3EymRjmqGKl3VwW0pAuvDhgEeYCIxmqdDL6QssrA4MWkodR4XGsR05QgraYhWRFJaNVL5s33Ygj5hXS7w==", "username"=>"p", "password"=>"[FILTERED]", "commit"=>"login"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["username", "p"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/content/landing
+Completed 302 Found in 95ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/content/landing" for ::1 at 2017-02-06 07:21:54 +0000
+  
+AbstractController::ActionNotFound (The action 'landing' could not be found for ContentController):
+  
+actionpack (5.0.1) lib/abstract_controller/base.rb:121:in `process'
+actionview (5.0.1) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.1) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.1) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (1.0ms)
+Started GET "/comments/view" for ::1 at 2017-02-06 07:22:44 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/comments/view"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered collection of C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [4 times] (2.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (11.0ms)
+  Rendering C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (2019.9ms)
+Started GET "/content/view" for ::1 at 2017-02-06 07:22:57 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (2.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (0.0ms)[0m  [1m[34mSELECT "themes".* FROM "themes" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 141ms (Views: 114.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/content/login" for ::1 at 2017-02-06 07:26:15 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+Processing by ContentController#login as HTML
+  Rendering content/login.html.erb within layouts/application
+  Rendered content/login.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 136ms (Views: 100.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/content/attempt_login" for ::1 at 2017-02-06 07:26:23 +0000
+Processing by ContentController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"U89jxWcaU1L7WV+muHc/HBbx+tYzSvMqr2u0rRgS8wEP0JJJb2pkbBN4kJUkFiG7y+kq1vb1r9xtFubaue/DzQ==", "username"=>"p", "password"=>"[FILTERED]", "commit"=>"login"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["username", "p"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 110ms (ActiveRecord: 8.5ms)
+
+
+Started GET "/content/view" for ::1 at 2017-02-06 07:26:23 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (0.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (0.0ms)[0m  [1m[34mSELECT "themes".* FROM "themes" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 162ms (Views: 107.2ms | ActiveRecord: 5.0ms)
+
+
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(751951996379702895);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(751951996379702895)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(751951996379702895);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (15.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(751951996379702895)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(751951996379702895);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20170203072835)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.6ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20170203072835"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddImageToHeadLines (20170202073755)
+  [1m[35m (15.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "head_lines" DROP "image"[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20170202073755"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddImageToSubjects (20170202072734)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "subjects" DROP "image"[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20170202072734"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddImageToContents (20170201072131)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "contents" DROP "image"[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20170201072131"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateHeadLinesSubjectsJoin (20170111203026)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP INDEX  "index_head_lines_subjects_on_head_line_id_and_subject_id"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "head_lines_subjects"[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20170111203026"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateContents (20170102152500)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "contents"[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20170102152500"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateHeadLines (20170102152442)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "head_lines"[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20170102152442"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateThemes (20170102152413)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "themes"[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20170102152413"]]
+  [1m[35m (15.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSubjects (20170102152342)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "subjects"[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20170102152342"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEditors (20170102152320)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "editors"[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20170102152320"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveOldPassword (20151112075633)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class RemoveOldPassword < ActiveRecord::Migration[4.2] (called from load at C:/Ruby22/bin/rake:22)
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "users" ADD "password" character varying[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(751951996379702895)[0m
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(751951996379702895);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddPasswordUsers (20151112073642)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class AddPasswordUsers < ActiveRecord::Migration[4.2] (called from load at C:/Ruby22/bin/rake:22)
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "users" DROP "password_digest"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(751951996379702895)[0m
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(751951996379702895);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddPasswordUsers (20151112073642)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class AddPasswordUsers < ActiveRecord::Migration[4.2] (called from load at C:/Ruby22/bin/rake:22)
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "users" DROP "password_digest"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(751951996379702895)[0m
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(751951996379702895);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddPasswordUsers (20151112073642)
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(751951996379702895)[0m
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(751951996379702895);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddPasswordUsers (20151112073642)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class AddPasswordUsers < ActiveRecord::Migration[4.2] (called from load at C:/Ruby22/bin/rake:22)
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20151112073642"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(751951996379702895)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(751951996379702895);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddPasswordUsers (20151112073642)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class AddPasswordUsers < ActiveRecord::Migration[4.2] (called from load at C:/Ruby22/bin/rake:22)
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20151112073642"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEditors (20170102152320)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (31.3ms)[0m  [1m[35mCREATE TABLE "editors" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "email" character varying(25), "username" character varying(15), "password" character varying(15), "location" character varying, "points" integer DEFAULT 0)[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170102152320"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSubjects (20170102152342)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.6ms)[0m  [1m[35mCREATE TABLE "subjects" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "text" character varying(25), "score" integer DEFAULT 0)[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170102152342"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateThemes (20170102152413)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.6ms)[0m  [1m[35mCREATE TABLE "themes" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "text" character varying(25), "score" integer DEFAULT 0)[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170102152413"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateHeadLines (20170102152442)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (21.5ms)[0m  [1m[35mCREATE TABLE "head_lines" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "text" character varying(200), "score" integer DEFAULT 0, "theme_id" integer, "user_id" integer)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX  "index_head_lines_on_theme_id" ON "head_lines"  ("theme_id")[0m
+  [1m[35m (15.7ms)[0m  [1m[35mCREATE  INDEX  "index_contents_on_user_id" ON "contents"  ("user_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(751951996379702895)[0m
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(751951996379702895);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateThemes (20170102152413)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "themes"[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20170102152413"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSubjects (20170102152342)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "subjects"[0m
+  [1m[35mSQL (15.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20170102152342"]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEditors (20170102152320)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "editors"[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20170102152320"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPasswordUsers (20151112073642)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class AddPasswordUsers < ActiveRecord::Migration[4.2] (called from load at C:/Ruby22/bin/rake:22)
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20151112073642"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(751951996379702895)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(751951996379702895);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddPasswordUsers (20151112073642)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class AddPasswordUsers < ActiveRecord::Migration[4.2] (called from load at C:/Ruby22/bin/rake:22)
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20151112073642"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEditors (20170102152320)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (21.2ms)[0m  [1m[35mCREATE TABLE "editors" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "email" character varying(25), "username" character varying(15), "password" character varying(15), "location" character varying, "points" integer DEFAULT 0)[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170102152320"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSubjects (20170102152342)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.7ms)[0m  [1m[35mCREATE TABLE "subjects" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "text" character varying(25), "score" integer DEFAULT 0)[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170102152342"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateThemes (20170102152413)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.6ms)[0m  [1m[35mCREATE TABLE "themes" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "text" character varying(25), "score" integer DEFAULT 0)[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170102152413"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateHeadLines (20170102152442)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.6ms)[0m  [1m[35mCREATE TABLE "head_lines" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "text" character varying(200), "score" integer DEFAULT 0, "theme_id" integer, "users_id" integer)[0m
+  [1m[35m (15.7ms)[0m  [1m[35mCREATE  INDEX  "index_head_lines_on_theme_id" ON "head_lines"  ("theme_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX  "index_contents_on_users_id" ON "contents"  ("users_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(751951996379702895)[0m
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(751951996379702895);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateThemes (20170102152413)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "themes"[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20170102152413"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSubjects (20170102152342)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.6ms)[0m  [1m[35mDROP TABLE "subjects"[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20170102152342"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEditors (20170102152320)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "editors"[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20170102152320"]]
+  [1m[35m (15.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPasswordUsers (20151112073642)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class AddPasswordUsers < ActiveRecord::Migration[4.2] (called from load at C:/Ruby22/bin/rake:22)
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20151112073642"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(751951996379702895)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(751951996379702895);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddPasswordUsers (20151112073642)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class AddPasswordUsers < ActiveRecord::Migration[4.2] (called from load at C:/Ruby22/bin/rake:22)
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20151112073642"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEditors (20170102152320)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (21.5ms)[0m  [1m[35mCREATE TABLE "editors" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "email" character varying(25), "username" character varying(15), "password" character varying(15), "location" character varying, "points" integer DEFAULT 0)[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170102152320"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSubjects (20170102152342)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "subjects" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "text" character varying(25), "score" integer DEFAULT 0)[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170102152342"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateThemes (20170102152413)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "themes" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "text" character varying(25), "score" integer DEFAULT 0)[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170102152413"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateHeadLines (20170102152442)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.6ms)[0m  [1m[35mCREATE TABLE "head_lines" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "text" character varying(200), "score" integer DEFAULT 0, "theme_id" integer, "users_id" integer)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX  "index_head_lines_on_theme_id" ON "head_lines"  ("theme_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX  "index_hedlines_on_users_id" ON "hedlines"  ("users_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(751951996379702895)[0m
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(751951996379702895);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateThemes (20170102152413)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "themes"[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20170102152413"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSubjects (20170102152342)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "subjects"[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20170102152342"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEditors (20170102152320)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "editors"[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20170102152320"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPasswordUsers (20151112073642)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class AddPasswordUsers < ActiveRecord::Migration[4.2] (called from load at C:/Ruby22/bin/rake:22)
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20151112073642"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(751951996379702895)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(751951996379702895);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddPasswordUsers (20151112073642)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class AddPasswordUsers < ActiveRecord::Migration[4.2] (called from load at C:/Ruby22/bin/rake:22)
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20151112073642"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEditors (20170102152320)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (31.3ms)[0m  [1m[35mCREATE TABLE "editors" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "email" character varying(25), "username" character varying(15), "password" character varying(15), "location" character varying, "points" integer DEFAULT 0)[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170102152320"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSubjects (20170102152342)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.6ms)[0m  [1m[35mCREATE TABLE "subjects" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "text" character varying(25), "score" integer DEFAULT 0)[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170102152342"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateThemes (20170102152413)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.6ms)[0m  [1m[35mCREATE TABLE "themes" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "text" character varying(25), "score" integer DEFAULT 0)[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170102152413"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateHeadLines (20170102152442)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.6ms)[0m  [1m[35mCREATE TABLE "head_lines" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "text" character varying(200), "score" integer DEFAULT 0, "theme_id" integer, "users_id" integer)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX  "index_head_lines_on_theme_id" ON "head_lines"  ("theme_id")[0m
+  [1m[35m (15.6ms)[0m  [1m[35mCREATE  INDEX  "index_headlines_on_users_id" ON "headlines"  ("users_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(751951996379702895)[0m
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(751951996379702895);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateThemes (20170102152413)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "themes"[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20170102152413"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSubjects (20170102152342)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "subjects"[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20170102152342"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEditors (20170102152320)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "editors"[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20170102152320"]]
+  [1m[35m (15.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPasswordUsers (20151112073642)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class AddPasswordUsers < ActiveRecord::Migration[4.2] (called from load at C:/Ruby22/bin/rake:22)
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20151112073642"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(751951996379702895)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at c:/sites/dailypost/config/routes.rb:8)
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(751951996379702895);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddPasswordUsers (20151112073642)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class AddPasswordUsers < ActiveRecord::Migration[4.2] (called from load at C:/Ruby22/bin/rake:22)
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20151112073642"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEditors (20170102152320)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (21.2ms)[0m  [1m[35mCREATE TABLE "editors" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "email" character varying(25), "username" character varying(15), "password" character varying(15), "location" character varying, "points" integer DEFAULT 0)[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170102152320"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSubjects (20170102152342)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.7ms)[0m  [1m[35mCREATE TABLE "subjects" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "text" character varying(25), "score" integer DEFAULT 0)[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170102152342"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateThemes (20170102152413)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.6ms)[0m  [1m[35mCREATE TABLE "themes" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "text" character varying(25), "score" integer DEFAULT 0)[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170102152413"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateHeadLines (20170102152442)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.6ms)[0m  [1m[35mCREATE TABLE "head_lines" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "text" character varying(200), "score" integer DEFAULT 0, "theme_id" integer, "users_id" integer)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX  "index_head_lines_on_theme_id" ON "head_lines"  ("theme_id")[0m
+  [1m[35m (15.6ms)[0m  [1m[35mCREATE  INDEX  "index_head_lines_on_users_id" ON "head_lines"  ("users_id")[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170102152442"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateContents (20170102152500)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.6ms)[0m  [1m[35mCREATE TABLE "contents" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "text" character varying(200), "score" integer DEFAULT 0, "place" integer, "head_line_id" integer, "theme_id" integer, "users_id" integer)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX  "index_contents_on_head_line_id" ON "contents"  ("head_line_id")[0m
+  [1m[35m (20.1ms)[0m  [1m[35mCREATE  INDEX  "index_contents_on_theme_id" ON "contents"  ("theme_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX  "index_contents_on_users_id" ON "contents"  ("users_id")[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170102152500"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateHeadLinesSubjectsJoin (20170111203026)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "head_lines_subjects" ("head_line_id" integer, "subject_id" integer)[0m
+  [1m[35m (15.6ms)[0m  [1m[35mCREATE  INDEX  "index_head_lines_subjects_on_head_line_id_and_subject_id" ON "head_lines_subjects"  ("head_line_id", "subject_id")[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170111203026"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddImageToContents (20170201072131)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.6ms)[0m  [1m[35mALTER TABLE "contents" ADD "image" character varying[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170201072131"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddImageToSubjects (20170202072734)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "subjects" ADD "image" character varying[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170202072734"]]
+  [1m[35m (15.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddImageToHeadLines (20170202073755)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE "head_lines" ADD "image" character varying[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170202073755"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUsers (20170203072835)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "first_name" character varying(15), "last_name" character varying(15), "email" character varying(25), "score" integer DEFAULT 0, "username" character varying(15), "password" character varying(15), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170203072835"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(751951996379702895)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m

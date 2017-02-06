@@ -1,11 +1,11 @@
 class AddPasswordUsers < ActiveRecord::Migration
-  def up
+ # def up
   
-  add_column "users", "password_digest", :string
-  end
+ # add_column "users", "password_digest", :string
+  #end
 
-def down
-	remove_column "users", "password_digest", :string 
-  end
+#def down
+#	remove_column "users", "password_digest", :string 
+ # end
 
 end

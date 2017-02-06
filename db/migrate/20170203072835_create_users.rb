@@ -4,6 +4,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
 t.string "first_name", :limit => 15
 t.string "last_name", :limit => 15
 t.string "email", :limit => 25
+t.integer "score", :default => 0
 t.string "username", :limit => 15
 t.string "password", :limit => 15
 #image

@@ -281,7 +281,7 @@ end
 if authorised_user
   session[:username] = found_user.username
    session[:id] = found_user.id
- redirect_to(:action => 'landing')
+ redirect_to(:controller=> 'content',:action => 'view')
 
 else 
    session[:username] = nil
