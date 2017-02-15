@@ -1,5 +1,5 @@
 class AddImageToSubjects < ActiveRecord::Migration[5.0]
   def change
-    add_column :subjects, :image, :string
-  end
+   add_column :subjects, :image, :string
+ end
 end
