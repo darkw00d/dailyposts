@@ -1,90 +1,68 @@
-<h1>Main page</h1>
-
-<%= flash[:notice] %>
-<%= session[:username] %>
-<%= session[:id] %>
-
-<%= link_to("Sign up", {:action => 'signup'},:class => 'buttons') %>
-<%= link_to("Login", {:action => 'login'},:class => 'login-button') %>
-
-
-<%= form_for(:head_line, :url => {:action => 'create'},:html =>{:multipart => true}) do |f| %>
- <p>
-    <%= f.label :text %><br />
-    <%= f.text_field :text %>
-  </p>
-  <p>
-    <%= f.file_field :image %>
-  </p>
-  <p>
-    <%= f.label :remote_image_url, "or image URL" %><br />
-    <%= f.text_field :remote_image_url %>
-  </p>
-     <div class="form-buttons">
-      <%= submit_tag('Create comment') %>
-    </div>
-
-  <% end %>
-
-  	 <% @top.each do |r| %>
-   
-   <%= image_tag r.image_url if r.image? %>
-        <td><%= link_to(r.text, {:action => 'selecthead', :id => r}) %> </td> 
-      <% end %>
-
-<p>subjects </p>
-
-        	 <% @subs.each do |r| %>
-     <td><%= link_to(r.text, {:action => 'selectsub', :id => r}) %> </td>
-    
-     
-      <% end %>
-
-
-<p>themes </p>
-
-           <% @theme.each do |r| %>
-     <td><%= link_to(r.text, {:action => 'selecttheme', :id => r}) %> </td>
-    
-     
-      <% end %>
-
+        
+<body>
 
 <div id="screen">
 <div id="topbar">
 <div id="logo"></div>
 <div id="middle">
 <div id="search"></div>
-<div id="message"></div>
+<div id="message">
+  <%= form_for(:head_line, :url => {:action => 'create'},:html =>{:multipart => true}) do |f| %>
+ 
+ 
+    <%= f.text_field :text, placeholder: 'Report fake news' %>
+       <%= f.file_field :image %>
+           <%= f.text_field :remote_image_url %>
+
+     <div class="form-buttons">
+      <%= submit_tag('+') %>
+    </div>
+
+  <% end %>
+
+
+</div>
 </div>
 <div id="admin">
 <div id="burger"></div>
-<div id="log"></div>
+<div id="log">
+  <%= link_to("Sign up", {:action => 'signup'},:class => 'buttons') %>
+<%= link_to("Login", {:action => 'login'},:class => 'login-button') %>
+</div>
 </div>
 </div>
 
 <div id="theme">
-<div id="subtheme"></div>
-<div id="subtheme"></div>
-<div id="subtheme"></div>
-<div id="subtheme"></div>
-<div id="subtheme"></div>
+
+   <% @theme.first(5).each do |r| %>
+
+<div id="subtheme">     <%= link_to(r.text, {:action => 'selecttheme', :id => r}) %> </div>
+
+    <% end %>
 </div>
 
 <div id="main">
 <div id="headline">
 
-<div id="title"></div>
+
+     <% @top.scored.first(1).each do |r| %>
+   
+   
+   
+  
+
+
+<div id="title">     <%= link_to(r.text, {:action => 'selecthead', :id => r}) %> </div>
 
 
 <div id="content">
 <div id="text">
-<div id="image"></div>
+<div id="image"> <%= image_tag r.image_url, style: 'height:100%;width:100%;' if r.image? %>  </div>
 <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
 
 
 </div>
-
+    <% end %>
 
 </div>
 
@@ -100,15 +78,13 @@
 </div>
 <div id="breaking">
 <div id="breakingtit"></div>
-<div id="breakingsub"></div>
-<div id="breakingsub"></div>
-<div id="breakingsub"></div>
-<div id="breakingsub"></div>
-<div id="breakingsub"></div>
-<div id="breakingsub"></div>
-<div id="breakingsub"></div>
-<div id="breakingsub"></div>
-<div id="breakingsub"></div>
+ <% @subs.first(9).each do |r| %>
+<div id="breakingsub">
+    
+    <%= link_to(r.text, {:action => 'selectsub', :id => r}) %> 
+      </div>   
+      <% end %>
+
 </div>
 <div id="stories">
 <div id="title"></div>
@@ -178,6 +154,7 @@
 
 
 <div id="actionsmall">
+<div id="score"></div>
 <div id="expand"></div>
 <div id="up"></div>
 <div id="down"></div>
@@ -213,3 +190,4 @@
 
 
 </div>
+</body>

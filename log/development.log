@@ -18453,3 +18453,1695 @@ Completed 200 OK in 1112ms (Views: 809.5ms | ActiveRecord: 176.3ms)
 Completed 200 OK in 732ms (Views: 623.1ms | ActiveRecord: 25.0ms)
 
 
+Started GET "/" for ::1 at 2017-02-15 20:00:16 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at C:/Sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at C:/Sites/dailypost/config/routes.rb:8)
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (6.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (2.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered content/view.html.erb within layouts/application (135.2ms)
+Completed 200 OK in 1023ms (Views: 753.3ms | ActiveRecord: 39.1ms)
+
+
+Started POST "/content/create" for ::1 at 2017-02-15 20:00:43 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"v6noA4adk6HguFEN2K7VFQEfphQOIjQJBLNyvyvRjDQgOmnRoMD9Slds3Yc+rtXkhV9qIL89X35ZBGA0Jlnd8w==", "head_line"=>{"text"=>"#tree", "remote_image_url"=>""}, "commit"=>"Create comment"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (7.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text", "image") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", 2017-02-15 20:00:43 UTC], ["updated_at", 2017-02-15 20:00:43 UTC], ["text", "#tree"], ["image", nil]]
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (9.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "themes" WHERE "themes"."text" = $1[0m  [["text", "tree"]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (5.0ms)[0m  [1m[32mINSERT INTO "themes" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-02-15 20:00:43 UTC], ["updated_at", 2017-02-15 20:00:43 UTC], ["text", "tree"]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[33mUPDATE "head_lines" SET "updated_at" = $1, "theme_id" = $2 WHERE "head_lines"."id" = $3[0m  [["updated_at", 2017-02-15 20:00:43 UTC], ["theme_id", 1], ["id", 2]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 152ms (ActiveRecord: 51.1ms)
+
+
+Started GET "/content/view" for ::1 at 2017-02-15 20:00:43 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (6.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (7.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered content/view.html.erb within layouts/application (47.1ms)
+Completed 200 OK in 589ms (Views: 483.7ms | ActiveRecord: 14.0ms)
+
+
+Started POST "/content/create" for ::1 at 2017-02-15 20:00:54 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gEumFFI+QRD/KrwpGzXFbPiM9QYHDlP9lQOd+2KZjwAf2CfGdGMv+0j+MKP9NcWdfMw5MrYROIrItI9wbxHexw==", "head_line"=>{"text"=>"#foo", "remote_image_url"=>""}, "commit"=>"Create comment"}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (6.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text", "image") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", 2017-02-15 20:00:54 UTC], ["updated_at", 2017-02-15 20:00:54 UTC], ["text", "#foo"], ["image", nil]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "themes" WHERE "themes"."text" = $1[0m  [["text", "foo"]]
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "themes" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-02-15 20:00:54 UTC], ["updated_at", 2017-02-15 20:00:54 UTC], ["text", "foo"]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[33mUPDATE "head_lines" SET "updated_at" = $1, "theme_id" = $2 WHERE "head_lines"."id" = $3[0m  [["updated_at", 2017-02-15 20:00:54 UTC], ["theme_id", 2], ["id", 3]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 76ms (ActiveRecord: 25.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-02-15 20:00:54 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (2.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (1.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered content/view.html.erb within layouts/application (42.1ms)
+Completed 200 OK in 591ms (Views: 498.1ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-02-15 20:02:40 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (6.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (2.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (3.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered content/view.html.erb within layouts/application (54.1ms)
+Completed 200 OK in 745ms (Views: 644.2ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/" for ::1 at 2017-02-15 20:02:56 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (2.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (1.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered content/view.html.erb within layouts/application (41.1ms)
+Completed 200 OK in 595ms (Views: 499.2ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/" for ::1 at 2017-02-15 20:04:37 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (2.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (2.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered content/view.html.erb within layouts/application (44.1ms)
+Completed 200 OK in 725ms (Views: 632.2ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/" for ::1 at 2017-02-15 20:05:23 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (2.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered content/view.html.erb within layouts/application (42.1ms)
+Completed 200 OK in 855ms (Views: 756.4ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/" for ::1 at 2017-02-15 20:06:16 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (2.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (1.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered content/view.html.erb within layouts/application (43.1ms)
+Completed 200 OK in 725ms (Views: 631.4ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/" for ::1 at 2017-02-15 20:07:44 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (2.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (1.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered content/view.html.erb within layouts/application (44.1ms)
+Completed 200 OK in 740ms (Views: 647.2ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/" for ::1 at 2017-02-15 20:08:00 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (3.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (2.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (2.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered content/view.html.erb within layouts/application (46.1ms)
+Completed 200 OK in 749ms (Views: 649.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/" for ::1 at 2017-02-15 20:08:37 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (2.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (1.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered content/view.html.erb within layouts/application (44.1ms)
+Completed 200 OK in 722ms (Views: 631.4ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/" for ::1 at 2017-02-15 20:08:41 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (2.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered content/view.html.erb within layouts/application (41.1ms)
+Completed 200 OK in 558ms (Views: 469.7ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/" for ::1 at 2017-02-15 20:12:48 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (2.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (2.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered content/view.html.erb within layouts/application (40.1ms)
+Completed 200 OK in 594ms (Views: 504.0ms | ActiveRecord: 5.0ms)
+
+
+Started POST "/content/create" for ::1 at 2017-02-15 20:13:10 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ry/aJ8Qubx3F77uQv/61mfvAuNS7t0uANCjPRsVLblzYvFv14nMB9nI7NxpZ/rVof4B04AqoIPdpn93NyMM/mw==", "head_line"=>{"text"=>"#koo", "remote_image_url"=>""}, "commit"=>"Create comment"}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (7.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text", "image") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", 2017-02-15 20:13:10 UTC], ["updated_at", 2017-02-15 20:13:10 UTC], ["text", "#koo"], ["image", nil]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (6.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "themes" WHERE "themes"."text" = $1[0m  [["text", "koo"]]
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[32mINSERT INTO "themes" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-02-15 20:13:10 UTC], ["updated_at", 2017-02-15 20:13:10 UTC], ["text", "koo"]]
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[33mUPDATE "head_lines" SET "updated_at" = $1, "theme_id" = $2 WHERE "head_lines"."id" = $3[0m  [["updated_at", 2017-02-15 20:13:10 UTC], ["theme_id", 3], ["id", 4]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 128ms (ActiveRecord: 33.1ms)
+
+
+Started GET "/content/view" for ::1 at 2017-02-15 20:13:10 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (3.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (2.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (2.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered content/view.html.erb within layouts/application (49.1ms)
+Completed 200 OK in 621ms (Views: 526.4ms | ActiveRecord: 7.0ms)
+
+
+Started POST "/content/create" for ::1 at 2017-02-15 20:13:16 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mRWrAQuQ+Jo/ERS6KoTwZG/XhKDqIFupv9beL7qqIoEGhirTLc2WcYjFmDDMhPCV65dIlFs/MN7iYcyktyJzRg==", "head_line"=>{"text"=>"#iii", "remote_image_url"=>""}, "commit"=>"Create comment"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (8.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text", "image") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", 2017-02-15 20:13:16 UTC], ["updated_at", 2017-02-15 20:13:16 UTC], ["text", "#iii"], ["image", nil]]
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (5.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "themes" WHERE "themes"."text" = $1[0m  [["text", "iii"]]
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (5.0ms)[0m  [1m[32mINSERT INTO "themes" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-02-15 20:13:16 UTC], ["updated_at", 2017-02-15 20:13:16 UTC], ["text", "iii"]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[33mUPDATE "head_lines" SET "updated_at" = $1, "theme_id" = $2 WHERE "head_lines"."id" = $3[0m  [["updated_at", 2017-02-15 20:13:16 UTC], ["theme_id", 4], ["id", 5]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 87ms (ActiveRecord: 33.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-02-15 20:13:16 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (3.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (2.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered content/view.html.erb within layouts/application (45.1ms)
+Completed 200 OK in 607ms (Views: 513.7ms | ActiveRecord: 6.0ms)
+
+
+Started POST "/content/create" for ::1 at 2017-02-15 20:13:21 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bf4diQ6vwE3toxW9X9CtcIgl4k+lXyqI4iCWd5t81DLybZxbKPKuplp3mTe50K2BDGUuexRAQf+/l4T8lvSF9Q==", "head_line"=>{"text"=>"#oooo", "remote_image_url"=>""}, "commit"=>"Create comment"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text", "image") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", 2017-02-15 20:13:21 UTC], ["updated_at", 2017-02-15 20:13:21 UTC], ["text", "#oooo"], ["image", nil]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "themes" WHERE "themes"."text" = $1[0m  [["text", "oooo"]]
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "themes" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-02-15 20:13:21 UTC], ["updated_at", 2017-02-15 20:13:21 UTC], ["text", "oooo"]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "head_lines" SET "updated_at" = $1, "theme_id" = $2 WHERE "head_lines"."id" = $3[0m  [["updated_at", 2017-02-15 20:13:21 UTC], ["theme_id", 5], ["id", 6]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 75ms (ActiveRecord: 22.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-02-15 20:13:21 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (1.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered content/view.html.erb within layouts/application (45.1ms)
+Completed 200 OK in 597ms (Views: 508.2ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/content/create" for ::1 at 2017-02-15 20:13:27 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LdJlxhKW0DIAvjDx40s7itdvvt+CoX7CqACnecvAvUCyQeQUNMu+2bdqvHsFSzt7Uy9y6zO+FbX1t7Xyxkjshw==", "head_line"=>{"text"=>"#iiiiiiiiiiiiii", "remote_image_url"=>""}, "commit"=>"Create comment"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text", "image") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", 2017-02-15 20:13:27 UTC], ["updated_at", 2017-02-15 20:13:27 UTC], ["text", "#iiiiiiiiiiiiii"], ["image", nil]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "themes" WHERE "themes"."text" = $1[0m  [["text", "iiiiiiiiiiiiii"]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "themes" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-02-15 20:13:27 UTC], ["updated_at", 2017-02-15 20:13:27 UTC], ["text", "iiiiiiiiiiiiii"]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "head_lines" SET "updated_at" = $1, "theme_id" = $2 WHERE "head_lines"."id" = $3[0m  [["updated_at", 2017-02-15 20:13:28 UTC], ["theme_id", 6], ["id", 7]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 69ms (ActiveRecord: 16.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-02-15 20:13:28 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (1.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered content/view.html.erb within layouts/application (44.1ms)
+Completed 200 OK in 579ms (Views: 491.7ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-02-15 20:16:03 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (1.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (47.1ms)
+Completed 200 OK in 663ms (Views: 571.9ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/content/create" for ::1 at 2017-02-15 20:16:17 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D4jsJqKh9L62Ek478swcKhwHbPsXeRjwcLzWJpuNH8OQG230hPyaVQHGwrEUzBzbmEegz6Zmc4ctC8StlgVOBA==", "head_line"=>{"text"=>"@ozzu", "remote_image_url"=>""}, "commit"=>"Create comment"}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text", "image") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", 2017-02-15 20:16:17 UTC], ["updated_at", 2017-02-15 20:16:17 UTC], ["text", "@ozzu"], ["image", nil]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects" WHERE "subjects"."text" = $1[0m  [["text", "ozzu"]]
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (6.0ms)[0m  [1m[32mINSERT INTO "subjects" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-02-15 20:16:17 UTC], ["updated_at", 2017-02-15 20:16:17 UTC], ["text", "ozzu"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 81ms (ActiveRecord: 22.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-02-15 20:16:17 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (1.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (45.1ms)
+Completed 200 OK in 587ms (Views: 497.4ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/content/create" for ::1 at 2017-02-15 20:16:31 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Igzyvk/BE9HQjMGEE8NRs31jW47gIbwbi6gW6arOR5q9n3NsaZx9OmdYTQ71w1FC+SOXulE+12zWHwRip0YWXQ==", "head_line"=>{"text"=>"@ccc", "remote_image_url"=>""}, "commit"=>"Create comment"}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text", "image") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", 2017-02-15 20:16:31 UTC], ["updated_at", 2017-02-15 20:16:31 UTC], ["text", "@ccc"], ["image", nil]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects" WHERE "subjects"."text" = $1[0m  [["text", "ccc"]]
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "subjects" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-02-15 20:16:31 UTC], ["updated_at", 2017-02-15 20:16:31 UTC], ["text", "ccc"]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 48ms (ActiveRecord: 12.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-02-15 20:16:31 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (2.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (1.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (45.1ms)
+Completed 200 OK in 590ms (Views: 500.5ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/content/create" for ::1 at 2017-02-15 20:16:41 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xIcGycx8l3BGLLvnfhuZhPvaPWipK32lTHVIJsCYUYBbFIcb6iH5m/H4N22YG5l1f5rxXBg0FtIRwlqtzRAARw==", "head_line"=>{"text"=>"@iiiiiiiiiiiii", "remote_image_url"=>""}, "commit"=>"Create comment"}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (4.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text", "image") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", 2017-02-15 20:16:41 UTC], ["updated_at", 2017-02-15 20:16:41 UTC], ["text", "@iiiiiiiiiiiii"], ["image", nil]]
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects" WHERE "subjects"."text" = $1[0m  [["text", "iiiiiiiiiiiii"]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "subjects" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-02-15 20:16:41 UTC], ["updated_at", 2017-02-15 20:16:41 UTC], ["text", "iiiiiiiiiiiii"]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 52ms (ActiveRecord: 19.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-02-15 20:16:41 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (1.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (43.1ms)
+Completed 200 OK in 581ms (Views: 492.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-02-15 20:17:12 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (1.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" ORDER BY created_at ASC[0m
+  Rendered content/view.html.erb within layouts/application (46.1ms)
+Completed 200 OK in 580ms (Views: 486.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-02-15 20:17:54 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (2.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (1.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 9]]
+  Rendered content/view.html.erb within layouts/application (49.1ms)
+Completed 200 OK in 588ms (Views: 497.4ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-02-15 20:18:58 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (1.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 9]]
+  Rendered content/view.html.erb within layouts/application (49.1ms)
+Completed 200 OK in 588ms (Views: 492.9ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/content/create" for ::1 at 2017-02-15 20:19:08 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qhXkhOsQ++qT1c4XypnGWMjCvHhtO0vbpLQmYBQ45KI1hmVWzU2VASQBQp0smcapTIJwTNwkIKz5AzTrGbC1ZQ==", "head_line"=>{"text"=>"@ii", "remote_image_url"=>""}, "commit"=>"Create comment"}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text", "image") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", 2017-02-15 20:19:08 UTC], ["updated_at", 2017-02-15 20:19:08 UTC], ["text", "@ii"], ["image", nil]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects" WHERE "subjects"."text" = $1[0m  [["text", "ii"]]
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "subjects" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-02-15 20:19:08 UTC], ["updated_at", 2017-02-15 20:19:08 UTC], ["text", "ii"]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 47ms (ActiveRecord: 12.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-02-15 20:19:08 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (2.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (2.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 9]]
+  Rendered content/view.html.erb within layouts/application (51.1ms)
+Completed 200 OK in 598ms (Views: 506.5ms | ActiveRecord: 5.0ms)
+
+
+Started POST "/content/create" for ::1 at 2017-02-15 20:19:16 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gjD3FXP84UaMM1cC424vPTYwJ3hFChA5Mo+eVn0eP6gdo3bHVaGPrTvn24gFbi/MsnDrTPQVe05vOIzdcJZubw==", "head_line"=>{"text"=>"@ddddddddddddddddddddd", "remote_image_url"=>""}, "commit"=>"Create comment"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text", "image") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", 2017-02-15 20:19:16 UTC], ["updated_at", 2017-02-15 20:19:16 UTC], ["text", "@ddddddddddddddddddddd"], ["image", nil]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects" WHERE "subjects"."text" = $1[0m  [["text", "ddddddddddddddddddddd"]]
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "subjects" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-02-15 20:19:16 UTC], ["updated_at", 2017-02-15 20:19:16 UTC], ["text", "ddddddddddddddddddddd"]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 48ms (ActiveRecord: 12.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-02-15 20:19:16 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (1.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mSubject Load (2.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 9]]
+  Rendered content/view.html.erb within layouts/application (53.1ms)
+Completed 200 OK in 595ms (Views: 501.7ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/content/create" for ::1 at 2017-02-15 20:19:26 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WA16tyfo633LH2IG1O/eqxwGF9GcHfzrp78oDOAeAdnHnvtlAbWFlnzL7owy795amEbb5S0Cl5z6CDqH7ZZQHg==", "head_line"=>{"text"=>"@giissa", "remote_image_url"=>""}, "commit"=>"Create comment"}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text", "image") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", 2017-02-15 20:19:26 UTC], ["updated_at", 2017-02-15 20:19:26 UTC], ["text", "@giissa"], ["image", nil]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects" WHERE "subjects"."text" = $1[0m  [["text", "giissa"]]
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "subjects" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-02-15 20:19:26 UTC], ["updated_at", 2017-02-15 20:19:26 UTC], ["text", "giissa"]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 47ms (ActiveRecord: 15.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-02-15 20:19:26 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (1.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 9]]
+  Rendered content/view.html.erb within layouts/application (50.1ms)
+Completed 200 OK in 569ms (Views: 483.5ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/content/create" for ::1 at 2017-02-15 20:19:32 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OdqIaRTC965uGs7Xd49+I5oKDl5sCZhDXqR7VqNeiVSmSQm7Mp+ZRdnOQl2Rj37SHkrCat0W8zQDE2ndrtbYkw==", "head_line"=>{"text"=>"@j", "remote_image_url"=>""}, "commit"=>"Create comment"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text", "image") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", 2017-02-15 20:19:33 UTC], ["updated_at", 2017-02-15 20:19:33 UTC], ["text", "@j"], ["image", nil]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects" WHERE "subjects"."text" = $1[0m  [["text", "j"]]
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "subjects" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-02-15 20:19:33 UTC], ["updated_at", 2017-02-15 20:19:33 UTC], ["text", "j"]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 46ms (ActiveRecord: 11.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-02-15 20:19:33 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (2.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (1.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 9]]
+  Rendered content/view.html.erb within layouts/application (52.1ms)
+Completed 200 OK in 601ms (Views: 512.2ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/content/create" for ::1 at 2017-02-15 20:19:40 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ohIXnegjQsFk3wNfdOG7xYn5RXqKXodxTdwpU8P1Q5A9gZZPzn4sKtMLj9WS4bs0DbmJTjtB7AYQazvYzn0SVw==", "head_line"=>{"text"=>"@dssss", "remote_image_url"=>""}, "commit"=>"Create comment"}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text", "image") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", 2017-02-15 20:19:41 UTC], ["updated_at", 2017-02-15 20:19:41 UTC], ["text", "@dssss"], ["image", nil]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects" WHERE "subjects"."text" = $1[0m  [["text", "dssss"]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "subjects" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-02-15 20:19:41 UTC], ["updated_at", 2017-02-15 20:19:41 UTC], ["text", "dssss"]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 54ms (ActiveRecord: 12.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-02-15 20:19:41 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (1.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mSubject Load (2.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 9]]
+  Rendered content/view.html.erb within layouts/application (59.1ms)
+Completed 200 OK in 686ms (Views: 584.6ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/content/create" for ::1 at 2017-02-15 20:19:48 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MAluiT+b9pS0uRQyFDWlfmEiCJM7el0ppgbkE/+kn6qvmu9bGcaYfwNtmLjyNaWP5WLEp4plNl77sfaY8izObQ==", "head_line"=>{"text"=>"@te", "remote_image_url"=>""}, "commit"=>"Create comment"}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text", "image") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", 2017-02-15 20:19:48 UTC], ["updated_at", 2017-02-15 20:19:48 UTC], ["text", "@te"], ["image", nil]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects" WHERE "subjects"."text" = $1[0m  [["text", "te"]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "subjects" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-02-15 20:19:49 UTC], ["updated_at", 2017-02-15 20:19:49 UTC], ["text", "te"]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 48ms (ActiveRecord: 13.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-02-15 20:19:49 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (2.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mSubject Load (2.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 9]]
+  Rendered content/view.html.erb within layouts/application (60.1ms)
+Completed 200 OK in 584ms (Views: 495.7ms | ActiveRecord: 5.0ms)
+
+
+Started POST "/content/create" for ::1 at 2017-02-15 20:19:54 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7XZRgqm0gwidy0EnliDbVtAgKFY/efhD/h7gRK2jD+py5dBQj+nt4yofza1wINunVGDkYo5mkzSjqfLPoCteLQ==", "head_line"=>{"text"=>"@qqqq", "remote_image_url"=>""}, "commit"=>"Create comment"}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text", "image") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", 2017-02-15 20:19:55 UTC], ["updated_at", 2017-02-15 20:19:55 UTC], ["text", "@qqqq"], ["image", nil]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects" WHERE "subjects"."text" = $1[0m  [["text", "qqqq"]]
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "subjects" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-02-15 20:19:55 UTC], ["updated_at", 2017-02-15 20:19:55 UTC], ["text", "qqqq"]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/view
+Completed 302 Found in 47ms (ActiveRecord: 14.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-02-15 20:19:55 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT "head_lines".* FROM "head_lines" ORDER BY created_at ASC[0m
+  [1m[36mTheme Load (1.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 9]]
+  Rendered content/view.html.erb within layouts/application (59.1ms)
+Completed 200 OK in 583ms (Views: 495.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-02-15 20:25:15 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at C:/Sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at C:/Sites/dailypost/config/routes.rb:8)
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mTheme Load (2.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mHeadLine Load (4.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered content/view.html.erb within layouts/application (212.3ms)
+Completed 500 Internal Server Error in 675ms (ActiveRecord: 30.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for #<HeadLine:0x91e1ea8>):
+    61: <div id="headline">
+    62: 
+    63: 
+    64:      <% @top.scored.first.each do |r| %>
+    65:    
+    66:    
+    67:    
+  
+app/views/content/view.html.erb:64:in `_app_views_content_view_html_erb___339742215_76988580'
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (24.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (7335.8ms)
+Started GET "/content/view" for ::1 at 2017-02-15 20:26:22 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at C:/Sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at C:/Sites/dailypost/config/routes.rb:8)
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mTheme Load (2.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 9]]
+  Rendered content/view.html.erb within layouts/application (113.2ms)
+Completed 200 OK in 759ms (Views: 552.9ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/content/view" for ::1 at 2017-02-16 07:56:50 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mTheme Load (26.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mHeadLine Load (2.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 9]]
+  Rendered content/view.html.erb within layouts/application (146.2ms)
+Completed 200 OK in 1240ms (Views: 1069.8ms | ActiveRecord: 29.0ms)
+
+
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at C:/Sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at C:/Sites/dailypost/config/routes.rb:8)
+Started GET "/" for ::1 at 2017-02-16 13:30:33 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (6.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mTheme Load (8.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mHeadLine Load (8.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSubject Load (4.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 9]]
+  Rendered content/view.html.erb within layouts/application (415.0ms)
+Completed 200 OK in 3081ms (Views: 2667.5ms | ActiveRecord: 60.0ms)
+
+
+Started GET "/" for ::1 at 2017-02-16 13:34:13 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mTheme Load (8.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mHeadLine Load (4.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSubject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 9]]
+  Rendered content/view.html.erb within layouts/application (52.0ms)
+Completed 200 OK in 780ms (Views: 676.4ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/" for ::1 at 2017-02-16 13:43:49 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mTheme Load (4.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mHeadLine Load (0.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSubject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 9]]
+  Rendered content/view.html.erb within layouts/application (80.0ms)
+Completed 200 OK in 860ms (Views: 737.5ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/" for ::1 at 2017-02-16 13:44:13 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mTheme Load (0.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mHeadLine Load (0.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSubject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 9]]
+  Rendered content/view.html.erb within layouts/application (64.0ms)
+Completed 200 OK in 848ms (Views: 755.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-02-16 13:44:23 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mTheme Load (0.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mHeadLine Load (4.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSubject Load (4.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 9]]
+  Rendered content/view.html.erb within layouts/application (64.0ms)
+Completed 200 OK in 656ms (Views: 559.7ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/" for ::1 at 2017-02-16 13:45:44 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mTheme Load (0.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mHeadLine Load (0.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSubject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 9]]
+  Rendered content/view.html.erb within layouts/application (48.0ms)
+Completed 200 OK in 744ms (Views: 657.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-02-16 13:49:35 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  Rendered content/view.html.erb within layouts/application (8.0ms)
+Completed 500 Internal Server Error in 344ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (C:/Sites/dailypost/app/views/content/view.html.erb:76: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...=100% height=100% if r.image? );@output_buffer.safe_append='...
+...                               ^
+C:/Sites/dailypost/app/views/content/view.html.erb:81: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;     end 
+                 ^
+C:/Sites/dailypost/app/views/content/view.html.erb:97: syntax error, unexpected keyword_do_block, expecting ')'
+'.freeze;  @subs.first(9).each do |r| 
+                                 ^
+C:/Sites/dailypost/app/views/content/view.html.erb:102: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;       end 
+                   ^
+C:/Sites/dailypost/app/views/content/view.html.erb:210: syntax error, unexpected keyword_ensure, expecting ')'
+C:/Sites/dailypost/app/views/content/view.html.erb:212: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/content/view.html.erb:76: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/content/view.html.erb:81: syntax error, unexpected keyword_end, expecting ')'
+app/views/content/view.html.erb:97: syntax error, unexpected keyword_do_block, expecting ')'
+app/views/content/view.html.erb:102: syntax error, unexpected keyword_end, expecting ')'
+app/views/content/view.html.erb:210: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/content/view.html.erb:212: syntax error, unexpected keyword_end, expecting ')'
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (24.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (7222.3ms)
+Started GET "/" for ::1 at 2017-02-16 13:54:22 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mTheme Load (0.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mHeadLine Load (4.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSubject Load (4.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 9]]
+  Rendered content/view.html.erb within layouts/application (44.0ms)
+Completed 200 OK in 564ms (Views: 472.5ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/" for ::1 at 2017-02-16 13:59:40 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mTheme Load (0.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mHeadLine Load (4.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSubject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 9]]
+  Rendered content/view.html.erb within layouts/application (44.0ms)
+Completed 200 OK in 564ms (Views: 474.5ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/" for ::1 at 2017-02-16 14:01:31 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mTheme Load (0.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mHeadLine Load (4.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSubject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 9]]
+  Rendered content/view.html.erb within layouts/application (48.0ms)
+Completed 200 OK in 576ms (Views: 487.2ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/" for ::1 at 2017-02-16 14:06:07 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at C:/Sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at C:/Sites/dailypost/config/routes.rb:8)
+  
+SyntaxError (C:/Sites/dailypost/app/controllers/content_controller.rb:42: syntax error, unexpected =>, expecting keyword_end
+      params[:id] => @head.id
+                    ^):
+  
+app/controllers/content_controller.rb:42: syntax error, unexpected =>, expecting keyword_end
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (20.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (6986.2ms)
+Started GET "/" for ::1 at 2017-02-16 14:07:09 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at C:/Sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at C:/Sites/dailypost/config/routes.rb:8)
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mTheme Load (0.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mHeadLine Load (0.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSubject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 9]]
+  Rendered content/view.html.erb within layouts/application (144.0ms)
+Completed 200 OK in 796ms (Views: 565.4ms | ActiveRecord: 28.0ms)
+
+
+Started POST "/content/create" for ::1 at 2017-02-16 14:07:19 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cHLZANgmYrtoBv+Yc8rlBym2wZOUsEt7KUXuLd/uCkmED17wyEnlPocV1exO4t0KE+4UbFOcIUTjIYckjfHJJg==", "head_line"=>{"text"=>"@yo ser"}, "commit"=>"Create comment"}
+  [1m[35m (4.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (8.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-02-16 14:07:19 UTC], ["updated_at", 2017-02-16 14:07:19 UTC], ["text", "@yo ser"]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects" WHERE "subjects"."text" = $1[0m  [["text", "yo"]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "subjects" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-02-16 14:07:19 UTC], ["updated_at", 2017-02-16 14:07:19 UTC], ["text", "yo"]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/selecthead
+Completed 302 Found in 68ms (ActiveRecord: 24.0ms)
+
+
+Started GET "/content/selecthead" for ::1 at 2017-02-16 14:07:19 +0000
+Processing by ContentController#selecthead as HTML
+  [1m[36mHeadLine Load (0.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" WHERE "head_lines"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 28ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find HeadLine with 'id'=):
+  
+app/controllers/content_controller.rb:48:in `selecthead'
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (16.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (7234.3ms)
+Started POST "/content/create" for ::1 at 2017-02-16 14:09:22 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at C:/Sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at C:/Sites/dailypost/config/routes.rb:8)
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cHLZANgmYrtoBv+Yc8rlBym2wZOUsEt7KUXuLd/uCkmED17wyEnlPocV1exO4t0KE+4UbFOcIUTjIYckjfHJJg==", "head_line"=>{"text"=>"@yo ser"}, "commit"=>"Create comment"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-02-16 14:09:22 UTC], ["updated_at", 2017-02-16 14:09:22 UTC], ["text", "@yo ser"]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects" WHERE "subjects"."text" = $1[0m  [["text", "yo"]]
+Redirected to http://localhost:3000/content/selecthead
+Completed 302 Found in 152ms (ActiveRecord: 8.0ms)
+
+
+Started GET "/content/selecthead" for ::1 at 2017-02-16 14:09:22 +0000
+Processing by ContentController#selecthead as HTML
+  [1m[36mHeadLine Load (0.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" WHERE "head_lines"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find HeadLine with 'id'=):
+  
+app/controllers/content_controller.rb:48:in `selecthead'
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (16.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (6986.2ms)
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at C:/Sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at C:/Sites/dailypost/config/routes.rb:8)
+  [1m[36mHeadLine Load (15.6ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" WHERE "head_lines"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Started POST "/content/create" for ::1 at 2017-02-16 14:12:02 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at C:/Sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at C:/Sites/dailypost/config/routes.rb:8)
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cHLZANgmYrtoBv+Yc8rlBym2wZOUsEt7KUXuLd/uCkmED17wyEnlPocV1exO4t0KE+4UbFOcIUTjIYckjfHJJg==", "head_line"=>{"text"=>"@yo ser"}, "commit"=>"Create comment"}
+  [1m[35m (4.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (4.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-02-16 14:12:02 UTC], ["updated_at", 2017-02-16 14:12:02 UTC], ["text", "@yo ser"]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects" WHERE "subjects"."text" = $1[0m  [["text", "yo"]]
+Redirected to http://localhost:3000/content/selecthead
+Completed 302 Found in 208ms (ActiveRecord: 32.0ms)
+
+
+Started GET "/content/selecthead" for ::1 at 2017-02-16 14:12:02 +0000
+Processing by ContentController#selecthead as HTML
+  [1m[36mHeadLine Load (0.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" WHERE "head_lines"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find HeadLine with 'id'=):
+  
+app/controllers/content_controller.rb:48:in `selecthead'
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (16.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (7006.2ms)
+Started POST "/content/create" for ::1 at 2017-02-16 14:13:13 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at C:/Sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at C:/Sites/dailypost/config/routes.rb:8)
+  
+SyntaxError (C:/Sites/dailypost/app/controllers/content_controller.rb:14: syntax error, unexpected '=', expecting keyword_end
+    params:id = @head.id
+               ^):
+  
+app/controllers/content_controller.rb:14: syntax error, unexpected '=', expecting keyword_end
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (12.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (8.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (7022.2ms)
+Started POST "/content/create" for ::1 at 2017-02-16 14:15:59 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at C:/Sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at C:/Sites/dailypost/config/routes.rb:8)
+  
+SyntaxError (C:/Sites/dailypost/app/controllers/content_controller.rb:14: syntax error, unexpected =>, expecting keyword_end
+    params[:id] => @head.id
+                  ^):
+  
+app/controllers/content_controller.rb:14: syntax error, unexpected =>, expecting keyword_end
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (20.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (8.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (7066.3ms)
+Started GET "/" for ::1 at 2017-02-16 14:20:27 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at C:/Sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at C:/Sites/dailypost/config/routes.rb:8)
+  
+SyntaxError (C:/Sites/dailypost/app/controllers/content_controller.rb:14: syntax error, unexpected =>, expecting keyword_end
+    :id => @head.id
+          ^):
+  
+app/controllers/content_controller.rb:14: syntax error, unexpected =>, expecting keyword_end
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (16.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (6986.2ms)
+Started GET "/" for ::1 at 2017-02-16 14:21:14 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at C:/Sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at C:/Sites/dailypost/config/routes.rb:8)
+  
+SyntaxError (C:/Sites/dailypost/app/controllers/content_controller.rb:14: syntax error, unexpected '=', expecting keyword_end
+    :id = @head.id
+         ^):
+  
+app/controllers/content_controller.rb:14: syntax error, unexpected '=', expecting keyword_end
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (16.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (12.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (8286.6ms)
+Started GET "/" for ::1 at 2017-02-16 21:45:49 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at C:/Sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at C:/Sites/dailypost/config/routes.rb:8)
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mTheme Load (8.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mHeadLine Load (4.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSubject Load (4.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 9]]
+  Rendered content/view.html.erb within layouts/application (372.1ms)
+Completed 200 OK in 2501ms (Views: 1532.6ms | ActiveRecord: 88.0ms)
+
+
+Started POST "/content/create" for ::1 at 2017-02-16 21:46:07 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"szhOUxJloL68769MFcxm9TEfJYFzn3CLNocopWRCN6VHRcmjAgonO1P8hTgo5F74C0fwfrSzGrT840GsNl30yg==", "head_line"=>{"text"=>"koy"}, "commit"=>"Create comment"}
+  [1m[35m (4.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (8.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-02-16 21:46:07 UTC], ["updated_at", 2017-02-16 21:46:07 UTC], ["text", "koy"]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/selecthead/21
+Completed 302 Found in 80ms (ActiveRecord: 16.0ms)
+
+
+Started GET "/content/selecthead/21" for ::1 at 2017-02-16 21:46:08 +0000
+Processing by ContentController#selecthead as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mHeadLine Load (0.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" WHERE "head_lines"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  Rendering content/selected.erb within layouts/application
+  [1m[36mContent Exists (16.0ms)[0m  [1m[34mSELECT  1 AS one FROM "contents" WHERE "contents"."head_line_id" = $1 LIMIT $2[0m  [["head_line_id", 21], ["LIMIT", 1]]
+  Rendered content/selected.erb within layouts/application (700.2ms)
+Completed 200 OK in 1817ms (Views: 1768.6ms | ActiveRecord: 28.0ms)
+
+
+Started GET "/content/selecthead/21" for ::1 at 2017-02-16 21:53:08 +0000
+Processing by ContentController#selecthead as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mHeadLine Load (4.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" WHERE "head_lines"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  Rendering content/selected.erb within layouts/application
+  [1m[36mContent Exists (16.0ms)[0m  [1m[34mSELECT  1 AS one FROM "contents" WHERE "contents"."head_line_id" = $1 LIMIT $2[0m  [["head_line_id", 21], ["LIMIT", 1]]
+  Rendered content/selected.erb within layouts/application (60.0ms)
+Completed 200 OK in 1196ms (Views: 1161.1ms | ActiveRecord: 20.0ms)
+
+
+Started GET "/" for ::1 at 2017-02-16 21:59:53 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mTheme Load (8.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mHeadLine Load (4.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSubject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 9]]
+  Rendered content/view.html.erb within layouts/application (252.1ms)
+Completed 200 OK in 2001ms (Views: 1674.9ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/" for ::1 at 2017-02-16 22:01:05 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mTheme Load (8.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mHeadLine Load (0.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSubject Load (4.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 9]]
+  Rendered content/view.html.erb within layouts/application (104.0ms)
+Completed 200 OK in 1400ms (Views: 1184.2ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/" for ::1 at 2017-02-16 22:01:38 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mTheme Load (4.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mHeadLine Load (4.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSubject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 9]]
+  Rendered content/view.html.erb within layouts/application (104.0ms)
+Completed 200 OK in 1468ms (Views: 1256.4ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/" for ::1 at 2017-02-16 22:02:02 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mTheme Load (4.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mHeadLine Load (4.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSubject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 9]]
+  Rendered content/view.html.erb within layouts/application (100.0ms)
+Completed 200 OK in 1384ms (Views: 1173.1ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/" for ::1 at 2017-02-16 22:04:59 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  Rendered content/view.html.erb within layouts/application (56.0ms)
+Completed 500 Internal Server Error in 956ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (C:/Sites/dailypost/app/views/content/view.html.erb:16: syntax error, unexpected =>, expecting ')'
+...append=( submit_tag '+':type => 'button' );@output_buffer.sa...
+...                               ^):
+  
+app/views/content/view.html.erb:16: syntax error, unexpected =>, expecting ')'
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (76.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (32.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (16.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (18898.0ms)
+Started GET "/" for ::1 at 2017-02-16 22:05:36 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mTheme Load (456.1ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mHeadLine Load (528.2ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSubject Load (8.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 9]]
+  Rendered content/view.html.erb within layouts/application (17375.7ms)
+Completed 200 OK in 30955ms (Views: 24516.3ms | ActiveRecord: 992.3ms)
+
+
+Started GET "/" for ::1 at 2017-02-16 22:08:01 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mTheme Load (4.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mHeadLine Load (4.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSubject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 9]]
+  Rendered content/view.html.erb within layouts/application (112.0ms)
+Completed 200 OK in 1408ms (Views: 1195.5ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/" for ::1 at 2017-02-16 22:11:22 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mTheme Load (4.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mHeadLine Load (4.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSubject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 9]]
+  Rendered content/view.html.erb within layouts/application (196.1ms)
+Completed 200 OK in 1701ms (Views: 1408.0ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/" for ::1 at 2017-02-16 22:17:31 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mTheme Load (4.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mHeadLine Load (4.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSubject Load (0.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 9]]
+  Rendered content/view.html.erb within layouts/application (336.1ms)
+Completed 200 OK in 2913ms (Views: 2634.3ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/images/photo.jpeg" for ::1 at 2017-02-16 22:17:34 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/images/photo.jpeg"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (20.0ms)
+  Rendered collection of C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [4 times] (64.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (184.1ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (20.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (24989.9ms)
+Started GET "/images/photo.jpeg" for ::1 at 2017-02-16 22:18:59 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/images/photo.jpeg"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (31.3ms)
+  Rendered collection of C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [4 times] (46.6ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (15.6ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (15.6ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (23941.4ms)
+Started GET "/images/photo.jpeg" for ::1 at 2017-02-17 19:13:29 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/images/photo.jpeg"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (15.8ms)
+  Rendered collection of C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [4 times] (46.7ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (36.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (36.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (21974.8ms)
+Started POST "/content/create" for ::1 at 2017-02-17 19:14:13 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ct0Sl51D8QKOUQksttrCJRsxyHFGVjnQ7QSAe0HyRiSGoJVnjSx2h2FCI1iL8vooIWkdjoF6U+8nYOlyE+2FSw==", "head_line"=>{"text"=>"", "image"=>{".x"=>"7", ".y"=>"10"}}}
+Unpermitted parameter: image
+  [1m[35m (416.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (5749.8ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-02-17 19:14:35 UTC], ["updated_at", 2017-02-17 19:14:35 UTC], ["text", ""]]
+  [1m[35m (420.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/selecthead/22
+Completed 302 Found in 17482ms (ActiveRecord: 6586.1ms)
+
+
+Started GET "/content/selecthead/22" for ::1 at 2017-02-17 19:14:42 +0000
+Processing by ContentController#selecthead as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mHeadLine Load (8.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" WHERE "head_lines"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering content/selected.erb within layouts/application
+  [1m[36mContent Exists (4.0ms)[0m  [1m[34mSELECT  1 AS one FROM "contents" WHERE "contents"."head_line_id" = $1 LIMIT $2[0m  [["head_line_id", 22], ["LIMIT", 1]]
+  Rendered content/selected.erb within layouts/application (344.1ms)
+Completed 500 Internal Server Error in 964ms (ActiveRecord: 12.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `scored' for nil:NilClass):
+    131: 
+    132: <div id="theme">
+    133: 
+    134:    <% @theme.scored.first(5).each do |r| %>
+    135: 
+    136: <div id="subtheme">     <%= link_to(r.text, {:action => 'selecttheme', :id => r}) %> </div>
+    137: 
+  
+app/views/content/selected.erb:134:in `_app_views_content_selected_erb___967108870_75489036'
+app/controllers/content_controller.rb:50:in `selecthead'
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (67.1ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (32.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.2ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (19277.5ms)
+Started GET "/" for ::1 at 2017-02-17 19:15:56 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mTheme Load (12.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mHeadLine Load (4.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSubject Load (4.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 9]]
+  Rendered content/view.html.erb within layouts/application (152.1ms)
+Completed 200 OK in 1609ms (Views: 1372.3ms | ActiveRecord: 20.0ms)
+
+
+Started GET "/images/photo.jpeg" for ::1 at 2017-02-17 19:15:58 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/images/photo.jpeg"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (16.0ms)
+  Rendered collection of C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [4 times] (16.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (12.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (12.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (23644.7ms)
+Started GET "/images/photo.jpeg" for ::1 at 2017-02-17 19:17:21 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/images/photo.jpeg"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (12.0ms)
+  Rendered collection of C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [4 times] (12.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (12.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (12.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (23075.4ms)
+Started POST "/content/create" for ::1 at 2017-02-17 19:18:01 +0000
+Started POST "/content/create" for ::1 at 2017-02-17 19:18:06 +0000
+Started POST "/content/create" for ::1 at 2017-02-17 19:18:06 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G8LY7kDBeGf+Yg+Pd/yCTGmK8pmfI4EGyJ/RBoJvhvPvv18eUK7/4hFxJftK1LpBU9InZlgP6zkC+7gP0HBFnA==", "head_line"=>{"text"=>"", "image"=>{".x"=>"23", ".y"=>"6"}}}
+Unpermitted parameter: image
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (5353.7ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-02-17 19:18:12 UTC], ["updated_at", 2017-02-17 19:18:12 UTC], ["text", ""]]
+  [1m[35m (5277.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/selecthead/23
+Completed 302 Found in 11108ms (ActiveRecord: 10631.4ms)
+
+
+Processing by ContentController#create as HTML
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G8LY7kDBeGf+Yg+Pd/yCTGmK8pmfI4EGyJ/RBoJvhvPvv18eUK7/4hFxJftK1LpBU9InZlgP6zkC+7gP0HBFnA==", "head_line"=>{"text"=>"", "image"=>{".x"=>"23", ".y"=>"9"}}}
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G8LY7kDBeGf+Yg+Pd/yCTGmK8pmfI4EGyJ/RBoJvhvPvv18eUK7/4hFxJftK1LpBU9InZlgP6zkC+7gP0HBFnA==", "head_line"=>{"text"=>"", "image"=>{".x"=>"23", ".y"=>"9"}}}
+Unpermitted parameter: image
+Unpermitted parameter: image
+  [1m[35m (10.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (18.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-02-17 19:18:35 UTC], ["updated_at", 2017-02-17 19:18:35 UTC], ["text", ""]]
+  [1m[35mSQL (18.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-02-17 19:18:35 UTC], ["updated_at", 2017-02-17 19:18:35 UTC], ["text", ""]]
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/selecthead/24
+Redirected to http://localhost:3000/content/selecthead/25
+Completed 302 Found in 117ms (ActiveRecord: 35.0ms)
+
+
+Completed 302 Found in 105ms (ActiveRecord: 29.0ms)
+
+
+Started GET "/content/selecthead/25" for ::1 at 2017-02-17 19:18:35 +0000
+Processing by ContentController#selecthead as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mHeadLine Load (3.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" WHERE "head_lines"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  Rendering content/selected.erb within layouts/application
+  [1m[36mContent Exists (4.0ms)[0m  [1m[34mSELECT  1 AS one FROM "contents" WHERE "contents"."head_line_id" = $1 LIMIT $2[0m  [["head_line_id", 25], ["LIMIT", 1]]
+  Rendered content/selected.erb within layouts/application (268.1ms)
+Completed 500 Internal Server Error in 957ms (ActiveRecord: 7.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `scored' for nil:NilClass):
+    131: 
+    132: <div id="theme">
+    133: 
+    134:    <% @theme.scored.first(5).each do |r| %>
+    135: 
+    136: <div id="subtheme">     <%= link_to(r.text, {:action => 'selecttheme', :id => r}) %> </div>
+    137: 
+  
+app/views/content/selected.erb:134:in `_app_views_content_selected_erb___967108870_79489332'
+app/controllers/content_controller.rb:50:in `selecthead'
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (79.1ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (36.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (8.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (23019.5ms)
+Started GET "/" for ::1 at 2017-02-17 19:21:39 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mTheme Load (4.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mHeadLine Load (0.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSubject Load (4.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 9]]
+  Rendered content/view.html.erb within layouts/application (104.0ms)
+Completed 200 OK in 1436ms (Views: 1214.8ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/images/photo.jpeg" for ::1 at 2017-02-17 19:21:41 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/images/photo.jpeg"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (12.0ms)
+  Rendered collection of C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [4 times] (12.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (12.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (8.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (22835.3ms)
+Started GET "/images/photo.jpeg" for ::1 at 2017-02-17 19:22:53 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/images/photo.jpeg"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (15.6ms)
+  Rendered collection of C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [4 times] (15.6ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (21134.2ms)
+Started POST "/content/create" for ::1 at 2017-02-17 19:24:01 +0000
+Processing by ContentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f6lHCROcghud1wRk/UAd1Rb6mYtZoK3A5nUt5sMuH8qL1MD5A/MFnnLELhDAaCXYLKJMdJ6Mx/8sEUTvkTHcpQ==", "head_line"=>{"text"=>"", "image"=>{".x"=>"5", ".y"=>"6"}}}
+Unpermitted parameter: image
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "head_lines" ("created_at", "updated_at", "text") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", 2017-02-17 19:24:01 UTC], ["updated_at", 2017-02-17 19:24:01 UTC], ["text", ""]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/content/selecthead/26
+Completed 302 Found in 29ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/content/selecthead/26" for ::1 at 2017-02-17 19:24:01 +0000
+Processing by ContentController#selecthead as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mHeadLine Load (2.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" WHERE "head_lines"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering content/selected.erb within layouts/application
+  [1m[36mContent Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "contents" WHERE "contents"."head_line_id" = $1 LIMIT $2[0m  [["head_line_id", 26], ["LIMIT", 1]]
+  Rendered content/selected.erb within layouts/application (145.2ms)
+Completed 500 Internal Server Error in 468ms (ActiveRecord: 4.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `scored' for nil:NilClass):
+    131: 
+    132: <div id="theme">
+    133: 
+    134:    <% @theme.scored.first(5).each do |r| %>
+    135: 
+    136: <div id="subtheme">     <%= link_to(r.text, {:action => 'selecttheme', :id => r}) %> </div>
+    137: 
+  
+app/views/content/selected.erb:134:in `_app_views_content_selected_erb___967108870_89285604'
+app/controllers/content_controller.rb:50:in `selecthead'
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (32.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (12.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (9262.6ms)
+Started GET "/images/photo.jpeg" for ::1 at 2017-02-17 19:24:32 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/images/photo.jpeg"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.0ms)
+  Rendered collection of C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [4 times] (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (10544.7ms)
+Started GET "/" for ::1 at 2017-02-17 19:25:06 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mTheme Load (6.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mHeadLine Load (4.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSubject Load (3.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 9]]
+  Rendered content/view.html.erb within layouts/application (78.1ms)
+Completed 200 OK in 3388ms (Views: 865.2ms | ActiveRecord: 13.0ms)
+
+
+Started GET "/content/selecthead/1" for ::1 at 2017-02-17 19:32:11 +0000
+Processing by ContentController#selecthead as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHeadLine Load (0.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" WHERE "head_lines"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering content/selected.erb within layouts/application
+  [1m[36mContent Exists (15.6ms)[0m  [1m[34mSELECT  1 AS one FROM "contents" WHERE "contents"."head_line_id" = $1 LIMIT $2[0m  [["head_line_id", 1], ["LIMIT", 1]]
+  [1m[36mContent Load (15.6ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."head_line_id" = $1 ORDER BY place DESC[0m  [["head_line_id", 1]]
+  Rendered content/selected.erb within layouts/application (408.2ms)
+Completed 500 Internal Server Error in 700ms (ActiveRecord: 62.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `scored' for nil:NilClass):
+    131: 
+    132: <div id="theme">
+    133: 
+    134:    <% @theme.scored.first(5).each do |r| %>
+    135: 
+    136: <div id="subtheme">     <%= link_to(r.text, {:action => 'selecttheme', :id => r}) %> </div>
+    137: 
+  
+app/views/content/selected.erb:134:in `_app_views_content_selected_erb___967108870_45557892'
+app/controllers/content_controller.rb:50:in `selecthead'
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (24.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (10.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (7515.0ms)
+Started GET "/" for ::1 at 2017-02-17 19:35:39 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at C:/Sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at C:/Sites/dailypost/config/routes.rb:8)
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mTheme Load (3.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mHeadLine Load (2.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSubject Load (2.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 9]]
+  Rendered content/view.html.erb within layouts/application (165.2ms)
+Completed 200 OK in 853ms (Views: 593.9ms | ActiveRecord: 50.1ms)
+
+
+Started GET "/" for ::1 at 2017-02-17 19:36:24 +0000
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at C:/Sites/dailypost/config/routes.rb:8)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.1. (called from block in <top (required)> at C:/Sites/dailypost/config/routes.rb:8)
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mTheme Load (1.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 9]]
+  Rendered content/view.html.erb within layouts/application (109.2ms)
+Completed 200 OK in 769ms (Views: 567.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/content/selecthead/1" for ::1 at 2017-02-17 19:36:28 +0000
+Processing by ContentController#selecthead as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHeadLine Load (0.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" WHERE "head_lines"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering content/selected.erb within layouts/application
+  [1m[36mContent Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "contents" WHERE "contents"."head_line_id" = $1 LIMIT $2[0m  [["head_line_id", 1], ["LIMIT", 1]]
+  [1m[36mContent Load (0.0ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."head_line_id" = $1 ORDER BY place DESC[0m  [["head_line_id", 1]]
+  [1m[36mTheme Load (0.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mHeadLine Load (0.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSubject Load (1.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 9]]
+  Rendered content/selected.erb within layouts/application (158.9ms)
+Completed 200 OK in 591ms (Views: 577.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/content/contentadd/1?place=-1" for ::1 at 2017-02-17 19:40:29 +0000
+Processing by ContentController#contentadd as HTML
+  Parameters: {"place"=>"-1", "id"=>"1"}
+  [1m[36mHeadLine Load (4.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" WHERE "head_lines"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering content/add.erb within layouts/application
+  Rendered content/add.erb within layouts/application (15.5ms)
+Completed 200 OK in 458ms (Views: 449.1ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/content/add?headline=1&place=-1" for ::1 at 2017-02-17 19:40:34 +0000
+Processing by ContentController#add as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Fqh9J6RW/zvddhIizzDrXhCGHx4R5kYVuGDhHLZdYMkekGnhzGn4B8ERiq97feBWHcF7L4IiYFGn4AQrL8LFCg==", "content"=>{"text"=>"llllllll", "remote_image_url"=>""}, "commit"=>"Create comment", "headline"=>"1", "place"=>"-1"}
+  [1m[36mHeadLine Load (4.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" WHERE "head_lines"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[32mINSERT INTO "contents" ("created_at", "updated_at", "text", "place", "image") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", 2017-02-17 19:40:34 UTC], ["updated_at", 2017-02-17 19:40:34 UTC], ["text", "llllllll"], ["place", -1], ["image", nil]]
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[33mUPDATE "contents" SET "updated_at" = $1, "head_line_id" = $2 WHERE "contents"."id" = $3[0m  [["updated_at", 2017-02-17 19:40:34 UTC], ["head_line_id", 1], ["id", 2]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  Rendering content/selected.erb within layouts/application
+  [1m[36mContent Load (2.0ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."head_line_id" = $1 ORDER BY place DESC[0m  [["head_line_id", 1]]
+  Rendered content/selected.erb within layouts/application (117.2ms)
+Completed 500 Internal Server Error in 460ms (ActiveRecord: 26.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `scored' for nil:NilClass):
+    131: 
+    132: <div id="theme">
+    133: 
+    134:    <% @theme.scored.first(5).each do |r| %>
+    135: 
+    136: <div id="subtheme">     <%= link_to(r.text, {:action => 'selecttheme', :id => r}) %> </div>
+    137: 
+  
+app/views/content/selected.erb:134:in `_app_views_content_selected_erb___967108870_74330472'
+app/controllers/content_controller.rb:121:in `add'
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (23.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (10.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (7171.5ms)
+Started GET "/content/selecthead/1" for ::1 at 2017-02-17 19:41:10 +0000
+Processing by ContentController#selecthead as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHeadLine Load (5.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" WHERE "head_lines"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering content/selected.erb within layouts/application
+  [1m[36mContent Exists (3.0ms)[0m  [1m[34mSELECT  1 AS one FROM "contents" WHERE "contents"."head_line_id" = $1 LIMIT $2[0m  [["head_line_id", 1], ["LIMIT", 1]]
+  [1m[36mContent Load (3.0ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."head_line_id" = $1 ORDER BY place DESC[0m  [["head_line_id", 1]]
+  [1m[36mTheme Load (4.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mHeadLine Load (2.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSubject Load (3.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 9]]
+  Rendered content/selected.erb within layouts/application (80.1ms)
+Completed 200 OK in 541ms (Views: 512.4ms | ActiveRecord: 20.0ms)
+
+
+Started GET "/" for ::1 at 2017-02-17 19:45:16 +0000
+Processing by ContentController#view as HTML
+  Rendering content/view.html.erb within layouts/application
+  [1m[36mTheme Load (1.0ms)[0m  [1m[34mSELECT  "themes".* FROM "themes" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mHeadLine Load (1.0ms)[0m  [1m[34mSELECT  "head_lines".* FROM "head_lines" ORDER BY created_at ASC, score ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSubject Load (2.0ms)[0m  [1m[34mSELECT  "subjects".* FROM "subjects" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 9]]
+  Rendered content/view.html.erb within layouts/application (44.1ms)
+Completed 200 OK in 633ms (Views: 532.7ms | ActiveRecord: 4.0ms)
+
+

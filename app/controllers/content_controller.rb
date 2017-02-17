@@ -1,10 +1,14 @@
 class ContentController < ApplicationController
  
 
-  def view
+def setbits
  @top = HeadLine.sorted
 @subs = Subject.sorted
 @theme = Theme.sorted
+end
+
+  def view
+setbits
   end
 
 def create
@@ -39,19 +43,22 @@ newsub.head_lines << @head
 else
 end
 end
-     redirect_to(:controller => 'content', :action => 'view')
+
+     redirect_to(:id => @head.id,:controller => 'content', :action => 'selecthead')
 end
 end
 
 def selecthead
 @selected = HeadLine.find(params[:id])
 @switch = "h"
+setbits
 render 'selected'
 end
 
 def selecttheme
 @selected = Theme.find(params[:id])
 @switch = "t"
+setbits
 render 'selected'
 end
 
@@ -59,6 +66,7 @@ end
 def selectsub
 @selected = Subject.find(params[:id])
 @switch = "s"
+setbits
 render 'selected'
 end
 

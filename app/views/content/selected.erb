@@ -97,5 +97,196 @@
 
     <% end %>
 
+        
+<body>
+
+<div id="screen">
+<div id="topbar">
+<div id="logo"></div>
+<div id="middle">
+<div id="search"></div>
+<div id="message">
+  <%= form_for(:head_line, :url => {:action => 'create'},:html =>{:multipart => true}) do |f| %>
+ 
+    <%= f.label :Add %>
+    <%= f.text_field :text %>
+
+     <div class="form-buttons">
+      <%= submit_tag('Create comment') %>
+    </div>
+
+  <% end %>
+
+
+</div>
+</div>
+<div id="admin">
+<div id="burger"></div>
+<div id="log">
+  <%= link_to("Sign up", {:action => 'signup'},:class => 'buttons') %>
+<%= link_to("Login", {:action => 'login'},:class => 'login-button') %>
+</div>
+</div>
+</div>
+
+<div id="theme">
+
+   <% @theme.scored.first(5).each do |r| %>
+
+<div id="subtheme">     <%= link_to(r.text, {:action => 'selecttheme', :id => r}) %> </div>
+
+    <% end %>
+</div>
+
+<div id="main">
+<div id="headline">
+
+
+     <% @top.scored.first(1).each do |r| %>
+   
+   
+   
+  
+
+
+<div id="title">     <%= link_to(r.text, {:action => 'selecthead', :id => r}) %> </div>
+
+
+<div id="content">
+<div id="text">
+<div id="image"> <%= image_tag r.image_url, style: 'height:100%;width:100%;' if r.image? %>  </div>
+<p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+
+
+</div>
+    <% end %>
+
+</div>
+
+
+
+<div id="actions">
+<div id="expand"></div>
+<div id="up"></div>
+<div id="down"></div>
+<div id="add"></div>
+<div id="share"></div>
+</div>
+</div>
+<div id="breaking">
+<div id="breakingtit"></div>
+ <% @subs.first(9).each do |r| %>
+<div id="breakingsub">
+    
+    <%= link_to(r.text, {:action => 'selectsub', :id => r}) %> 
+      </div>   
+      <% end %>
+
+</div>
+<div id="stories">
+<div id="title"></div>
+
+
+<div id="content">
+<div id="text">
+<div id="image"></div>
+<p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+
+
+</div>
+
+
+</div>
+
+
+
+<div id="actionsmall">
+<div id="expand"></div>
+<div id="up"></div>
+<div id="down"></div>
+<div id="add"></div>
+<div id="share"></div>
+</div>
+
+
+</div>
+
+<div id="stories"><div id="title"></div>
+
+
+<div id="content">
+<div id="text">
+<div id="image"></div>
+<p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+
+
+</div>
+
+
+</div>
+
+
+
+<div id="actionsmall">
+<div id="expand"></div>
+<div id="up"></div>
+<div id="down"></div>
+<div id="add"></div>
+<div id="share"></div>
+</div></div>
+<div id="stories"><div id="title"></div>
+
+
+<div id="content">
+<div id="text">
+<div id="image"></div>
+<p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+
+
+</div>
+
+
+</div>
+
+
+
+<div id="actionsmall">
+<div id="score"></div>
+<div id="expand"></div>
+<div id="up"></div>
+<div id="down"></div>
+<div id="add"></div>
+<div id="share"></div>
+</div></div>
+<div id="stories"><div id="title"></div>
+
+
+<div id="content">
+<div id="text">
+<div id="image"></div>
+<p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+
+
+</div>
+
+
+</div>
+
+
+
+<div id="actionsmall">
+<div id="expand"></div>
+<div id="up"></div>
+<div id="down"></div>
+<div id="add"></div>
+<div id="share"></div>
+</div></div>
+
+</div>
+
+
+
+</div>
+</body>
 
 
