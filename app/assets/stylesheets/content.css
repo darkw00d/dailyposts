@@ -219,3 +219,11 @@
 	z-index: 1;
 	opacity: 0.3;	
 }
+
+#screen #contento {
+	width: 100%;
+	height: 20%;
+	background-color: #669900;
+	float: left;
+	position: relative;
+}

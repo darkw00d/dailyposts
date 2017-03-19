@@ -34,25 +34,48 @@
 
 <div id="theme">
 
-   <% @theme.first(5).each do |r| %>
 
-<div id="subtheme">     <%= link_to(r.text, {:action => 'selecttheme', :id => r}) %> </div>
 
-    <% end %>
+<% if params[:t] != nil %>
+   
+   <div id="subtheme">
+    <%= @theme.text %> 
+     </div>  
+
+   <div id="subtheme">
+    <%= link_to("show all", {:action => 'view', :t => nil}) %> 
+     </div>  
+     <%else%>
+
+     <% @theme.each do |r| %>
+<div id="subtheme">
+    
+    <%= link_to(r.text, {:action => 'view', :t => r.id}) %> 
+      </div>   
+      <% end %>
+
+     <%end%>
+
+
+
+
+
 </div>
 
 <div id="main">
 <div id="headline">
 
-
-     <% @top.scored.first(1).each do |r| %>
+<% if @top.count == 1 %>
+ <% r = @top %>
+ <% else %>
+     <% @top.first(1).each do |r| %>
    
    
    
   
 
 
-<div id="title">     <%= link_to(r.text, {:action => 'selecthead', :id => r}) %> </div>
+<div id="title">     <%= link_to(r.text, {:action => 'view', :h => r}) %> </div>
 
 
 <div id="content">
@@ -63,7 +86,7 @@
 
 </div>
     <% end %>
-
+<% end %>
 </div>
 
 
@@ -78,16 +101,31 @@
 </div>
 <div id="breaking">
 <div id="breakingtit"></div>
- <% @subs.first(9).each do |r| %>
+<% if params[:s] != nil %>
+   
+   <div id="breakingsub">
+    <%= @subs.text %> 
+     </div>  
+
+   <div id="breakingsub">
+    <%= link_to("show all", {:action => 'view', :s => nil}) %> 
+     </div>  
+     <%else%>
+
+     <% @subs.each do |r| %>
 <div id="breakingsub">
     
-    <%= link_to(r.text, {:action => 'selectsub', :id => r}) %> 
+    <%= link_to(r.text, {:action => 'view', :s => r.id}) %> 
       </div>   
       <% end %>
 
+     <%end%>
+
+ 
 </div>
 <div id="stories">
 <div id="title"></div>
+
 
 
 <div id="content">

@@ -5,8 +5,9 @@ class CreateSubjects < ActiveRecord::Migration[5.0]
 
 t.string "text", :limit => 25
 t.integer "score" ,:default =>0
-
+t.integer "theme_id"
     end
+add_index :subjects, ["theme_id"]
 
 end
      def down

@@ -63,7 +63,9 @@ ActiveRecord::Schema.define(version: 20170213151125) do
     t.datetime "updated_at",                        null: false
     t.string   "text",       limit: 25
     t.integer  "score",                 default: 0
+    t.integer  "theme_id"
     t.string   "image"
+    t.index ["theme_id"], name: "index_subjects_on_theme_id", using: :btree
   end
 
   create_table "themes", force: :cascade do |t|

@@ -1,14 +1,25 @@
 class ContentController < ApplicationController
  
 
-def setbits
- @top = HeadLine.sorted
-@subs = Subject.sorted
+  def view
+if (params[:t]) != nil
+    @theme = Theme.find(params[:t])
+@top = @theme.head_lines.sorted.first(5)
+@subs = @theme.subjects.sorted.first(5)
+else
 @theme = Theme.sorted
 end
 
-  def view
-setbits
+
+if (params[:s]) != nil
+    @subs = Subject.find(params[:s])
+@top = @subs.head_lines.sorted.first(5)
+@theme = Theme.sorted
+else
+@subs = Subject.sorted
+end
+
+  @top = HeadLine.scored
   end
 
 def create
@@ -51,23 +62,24 @@ end
 def selecthead
 @selected = HeadLine.find(params[:id])
 @switch = "h"
-setbits
-render 'selected'
+
+render 'view'
 end
 
 def selecttheme
 @selected = Theme.find(params[:id])
 @switch = "t"
 setbits
-render 'selected'
+render 'view'
 end
 
 
 def selectsub
 @selected = Subject.find(params[:id])
 @switch = "s"
+params[:s] = Subject.find(params[:id])
 setbits
-render 'selected'
+render 'view'
 end
 
 def contentadd
